@@ -4,8 +4,8 @@ titleSuffix: Azure DevOps
 description: Learn how to query Analytics trend data and consume it in a client tool when working from Azure DevOps.
 ms.subservice: azure-devops-analytics
 ms.assetid: FEF88D72-32D7-4DE8-B11E-BCB1A491C3FC
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: tutorial
 monikerRange: '>= azure-devops-2019'
 ms.date: 09/30/2020
@@ -33,7 +33,7 @@ Using the OData Aggregation Extensions, you can return aggregated data from Azur
 ::: moniker range=">= azure-devops-2019 < azure-devops"
 
 > [!NOTE]
-> The examples shown in this document are based on a Azure DevOps Services URL, you will need to substitute in your Azure DevOps Server URL.
+> The examples shown in this document are based on an Azure DevOps Services URL, you will need to substitute in your Azure DevOps Server URL.
 
 
 > [!div class="tabbedCodeSnippets"]
@@ -45,7 +45,7 @@ Using the OData Aggregation Extensions, you can return aggregated data from Azur
 
 
 
-<a id="trend-data" />
+<a id="trend-data"></a>
 
 ## Construct a basic query for trend data   
  

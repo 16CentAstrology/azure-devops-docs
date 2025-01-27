@@ -7,13 +7,13 @@ ms.assetid:
 ms.author: chcomley
 author: chcomley
 ms.topic: quickstart
-monikerRange: '>= azure-devops-2022'
-ms.date: 08/03/2022
+monikerRange: '= azure-devops'
+ms.date: 11/11/2024
 ---
 
 # Create audit streaming
 
-[!INCLUDE [version-gt-eq-2022](../../includes/version-gt-eq-2022.md)]
+[!INCLUDE [version-eq-azure-devops](../../includes/version-eq-azure-devops.md)]
 
 > [!NOTE]
 > Auditing is still in public preview.
@@ -35,26 +35,19 @@ Private linked workspaces aren't supported today.
 
 ## Prerequisites
 
-By default, Project Collection Administrators (PCAs) are the only group that has access to the auditing feature. You must have the following permissions:
-
-- Manage audit streams
-- View audit log
-  
-  :::image type="content" source="media/auditing-streaming/auditing-permissions.png" alt-text="Set audit permissions to Allow":::
-
-These permissions can be given to any users or groups you wish to have manage your organization's streams. Additionally, there's also a *Delete audit streams* permission that you can add on for users or groups.
+[!INCLUDE [prerequisites-auditing](includes/prerequisites-auditing.md)]
 
 ## Create a stream
 
-1. Sign in to your organization (```https://dev.azure.com/{yourorganization}```).
-2. Select ![gear icon](../../media/icons/gear-icon.png) **Organization settings**.
- 
-   ![Screenshot showing highlighted Organization settings button.](../../media/settings/open-admin-settings-vert.png)
+1. Sign in to your organization (```https://dev.azure.com/{Your_Organization}```).
+1. Select ![gear icon](../../media/icons/gear-icon.png) **Organization settings**.
 
-3. Select **Auditing**.
+   ![Screenshot showing highlighted Organization settings button.](../../media/settings/open-admin-settings-vert.png)
+   
+1. Select **Auditing**.
 
    ![Select Auditing in Organization settings](media/auditing-streaming/select-auditing-organization-settings.png)
-
+   
 > [!NOTE]
 > If you don't see *Auditing* in Organization Settings, then auditing is not currently enabled for your organization. Someone in the organization owner or Project Collection Administrators (PCAs) group must [enable Auditing](azure-devops-auditing.md#enable-and-disable-auditing) in Organization Policies. You will then be able to see events on the Auditing page if you have the appropriate permissions.
 
@@ -79,25 +72,29 @@ Streams send data to Splunk via the HTTP Event Collector endpoint.
 
 1. Enable this feature in Splunk. For more information, see this [Splunk documentation](https://aka.ms/adostreamingsplunkdocumentation).
    
-   Once it's enabled, you should have an HTTP Event Collector token and the URL to your Splunk instance. You need both the token and URL to create a Splunk stream.
+   Once enabled, you should have an HTTP Event Collector token and the URL to your Splunk instance. You need both the token and URL to create a Splunk stream.
 
    > [!NOTE]
    > When you're creating a new Event Collector token in Splunk, don't check “Enable indexer acknowledgement”. If it's checked, then no events flow into Splunk. You can edit the token in Splunk to remove that setting. 
 
-2. Enter your Splunk URL, which is the pointer to your Splunk instance. Ensure that you specify a port at the end of the URL. The default port is `8088`, so your URL would be similar to `https://prd-p-2k3mp2xhznbs.cloud.splunk.come:8088`. 
+2. Enter your Splunk URL, which is the pointer to your Splunk instance. Ensure that you specify a port at the end of the URL. The default port is `8088`, so your URL would be similar to `https://prd-p-2k3mp2xhznbs.cloud.splunk.com:8088` or `https://prd-p-2k3mp2xhznbs.splunkcloud.com`. 
 
 3. Enter the event collector token you created into the token field. The token is stored securely within Azure DevOps and never displayed again in the UI. We recommend rotating the token regularly, which you can do by getting a new token from Splunk and editing the stream.
 
    :::image type="content" source="media/auditing-streaming/create-stream-splunk.png" alt-text="Enter topic endpoint and access key that you noted earlier":::
 
-4. Select **Set up** and your stream's configured. 
+4. Select **Set up**. 
    
-Events begin to arrive on Splunk within half an hour or less. 
+Your stream gets configured and events begin to arrive on Splunk within half an hour or less. 
 
 ### Set up an Event Grid stream
 
-1. Create an Event Grid topic on Azure. 
-2. Make note of the “Topic Endpoint” and one of the two “Access Keys”. Use this information to create the Event Grid connection.
+1. Create an Event Grid topic on Azure.
+
+> [!NOTE]
+> Go to the **Advanced** tab and ensure that the Event Schema is set to **Event Grid Schema**. Other schemas are not supported by Azure DevOps. 
+
+2. Make note of the "Topic Endpoint" and one of the two "Access Keys". Use this information to create the Event Grid connection.
 
    :::image type="content" source="media/auditing-streaming/azure-event-grid.png" alt-text="Azure Event Grid information":::
 
@@ -110,15 +107,16 @@ Once you have your Event Grid stream configured, you can set up subscriptions on
 ### Set up an Azure Monitor Log stream
 
 1. Create a [Log Analytics workspace](/azure/azure-monitor/learn/quick-create-workspace).
-2. Open the workspace and select **Agents management**.
-3. Make note of the workspace ID and primary key.
+2. Open the workspace and select **Agents**.
+3. Select **Log Analytics agent instructions** to view the workspace ID and primary key.
+4. Make note of the workspace ID and primary key.
 
    :::image type="content" source="media/auditing-streaming/azure-monitor-log-keys.png" alt-text="Make note of workspace ID and primary key":::
 
-5. Set up your Azure Monitor log stream by proceeding through the same initial steps to create a stream.
-6. For target options, select **Azure Monitor Logs**.
+6. Set up your Azure Monitor log stream by proceeding through the same initial steps to create a stream.
+7. For target options, select **Azure Monitor Logs**.
 
-7. Enter the workspace ID and primary key, and then select **Set up**. The primary key is stored securely within Azure DevOps and never displayed again in the UI. Rotate the key regularly, which you can do by getting a new key from Azure Monitor Log and editing the stream.
+8. Enter the workspace ID and primary key, and then select **Set up**. The primary key is stored securely within Azure DevOps and never displayed again in the UI. Rotate the key regularly, which you can do by getting a new key from Azure Monitor Log and editing the stream.
 
    :::image type="content" source="media/auditing-streaming/create-stream-azure-monitor-logs.png" alt-text="Enter workspace ID and primary key and then select Set up.":::
 
@@ -142,7 +140,7 @@ Parameters available for editing differ per stream type.
 ## Disable a stream
  
 1. Next to the stream that you want to disable, move the **Enabled** toggle from *On* to *Off*.  
-   When streams encounter a failure, they may become disabled. You can get details on the failure from the status shown next to the stream, or by selecting **Edit stream**. You can also disable a stream manually, and then re-enable it later. 
+   When streams encounter a failure, they might become disabled. You can get details on the failure from the status shown next to the stream, or by selecting **Edit stream**. You can also disable a stream manually, and then re-enable it later. 
 
    :::image type="content" source="media/auditing-streaming/disable-stream-move-toggle-off.png" alt-text="Move toggle to Off to disable stream":::
 
@@ -151,7 +149,7 @@ Parameters available for editing differ per stream type.
 You can re-enable a disabled stream. It catches up on any audit events that were missed for up to the previous seven days. That way you don't miss any events from the duration that the stream was disabled. 
 
 > [!NOTE]
-> If a stream is disabled for more than 7 days, events older than 7 days aren't included in the catch up. 
+> Events older than 7 days aren't included in the catch-up if a stream is disabled for more than 7 days.
 
 ## Delete a stream
 
@@ -167,11 +165,11 @@ To delete a stream, make sure that you have the *Delete audit streams* permissio
 
 3. Select **Confirm**.
 
-Your stream gets removed. Any events that haven't been sent before the deletion aren't sent.
+The system removes your stream. Any unsent events before the deletion don't get sent.
 
 ## Related articles
 
-- [Review audit log](azure-devops-auditing.md#review-audit-log)
-- [Export audit events](azure-devops-auditing.md#export-auditing-events)
-- [List of audit events](auditing-events.md)
-- [Introducing Azure DevOps Audit Stream on Azure DevOps blog](https://devblogs.microsoft.com/devops/introducing-azure-devops-audit-stream/)
+- [Review the audit log](azure-devops-auditing.md#review-audit-log)
+- [Export audit events](azure-devops-auditing.md#export-audit-events)
+- [View the list of audit events](auditing-events.md)
+- [Read about Azure DevOps Audit Stream on the Azure DevOps blog](https://devblogs.microsoft.com/devops/introducing-azure-devops-audit-stream/)

@@ -5,8 +5,8 @@ description: Customize a process by adding or modifying a work item type for a p
 ms.custom: inherited-process
 ms.service: azure-devops-boards
 ms.assetid: DBF41880-62A4-43A9-9A31-8DB701EB888E
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 monikerRange: '>= azure-devops-2019'
 ms.topic: how-to
 ms.date: 04/22/2019
@@ -94,7 +94,7 @@ To re-enable the WIT, choose **Enable** from the WIT context menu.
 > [!NOTE]    
 > Disabling a WIT removes the WIT from the **New** drop down and add experiences. Creating a work item of that WIT is also blocked via REST APIs.  
 >
-> No changes are made to existing work items of that type. You can update or delete them and they continue to appear on backlogs and boards. Also, you can change the work item type of disabled WITs to an enabled type, but you can't change the type to a disabled WIT.
+> No changes are made to existing work items of that type. You can update or delete them and they continue to appear on backlogs and boards. Both work item types need to be enabled in order to do a change type operation.
 
 <a id="destroy">  </a>
 
@@ -105,7 +105,7 @@ To re-enable the WIT, choose **Enable** from the WIT context menu.
 
 1. To completely remove a custom WIT and all work items based on that WIT, choose **Destroy** from the WIT context menu.
 
-	To destroy a WIT, you must be a member of the Project Collection Administrators group or be [granted explicit permissions to edit a specific process](../../../organizations/security/set-permissions-access-work-tracking.md#process-permissions). 
+	To destroy a WIT, be a member of the Project Collection Administrators group or be [granted explicit permissions to edit a specific process](../../../organizations/security/set-permissions-access-work-tracking.md#process-permissions). 
 
 2. To complete the delete operation, you must type the name of the WIT as shown. 
 

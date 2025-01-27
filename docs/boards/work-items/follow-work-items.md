@@ -2,11 +2,11 @@
 title: Follow changes to work
 titleSuffix: Azure Boards & Azure Repos
 description: Learn how to track updates made to a work item or pull request by following it when using Azure Boards or Azure Repos.
-ms.custom: work-items, seodec18, cross-project 
+ms.custom: work-items, cross-project
 ms.subservice: azure-devops-settings
 ms.assetid: 77CAEE8E-BF1A-47DA-9818-A0C52BAC813C
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: tutorial
 monikerRange: '<= azure-devops'
 ms.date: 07/13/2022
@@ -35,31 +35,15 @@ This article shows you how to:
 > * Follow a pull request 
 > * Manage work items that you're following
 
-::: moniker range="<= azure-devops-2019"
+::: moniker range="=azure-devops-2019"
 
-[Configure an SMTP server](/azure/devops/server/admin/setup-customize-alerts) in order for team members to receive notifications.   
+[Configure an SMTP server](/azure/devops/server/admin/setup-customize-alerts) for team members to receive notifications.   
 ::: moniker-end  
 
 
 ## Prerequisites
 
-::: moniker range="azure-devops"
-
-* Connect to a project. If you don't have a project yet, [create one](../get-started/sign-up-invite-teammates.md). 
-* You must be added to a project as a member of the **Contributors** or **Project Administrators** security group. To get added, [Add users to a project or team](../../organizations/security/add-users-team-project.md). 
-* To view or follow work items, you must be granted **Stakeholder** access or higher. For details, see [About access levels](../../organizations/security/access-levels.md). Also, you must have your **View work items in this node** and **Edit work items in this node** permissions set to **Allow**. By default, the **Contributors** group has this permission set. To learn more, see [Set permissions and access for work tracking](../../organizations/security/set-permissions-access-work-tracking.md).  
-* To view or follow pull requests, you must have **Basic** access or higher.   
-
-::: moniker-end
-
-::: moniker range="< azure-devops"
-
-* You must connect to a project. If you don't have a project yet, [create one](../../organizations/projects/create-project.md).
-* You must be added to a project as a member of the **Contributors** or **Project Administrators** security group. To get added, [Add users to a project or team](../../organizations/security/add-users-team-project.md). 
-* To view or follow work items, you must be granted **Stakeholder** access or higher. For details, see [About access levels](../../organizations/security/access-levels.md). Also, you must have your **View work items in this node** and **Edit work items in this node** permissions set to **Allow**. By default, the **Contributors** group has this permission set. To learn more, see [Set permissions and access for work tracking](../../organizations/security/set-permissions-access-work-tracking.md).  
-* To view or follow pull requests, you must have **Basic** access or higher.  
-
-::: moniker-end 
+[!INCLUDE [prerequisites-work-items](../includes/prerequisites-work-items.md)]
 
 ## Follow a work item
 
@@ -79,7 +63,7 @@ By default, you're **Subscribed** to receive a notification when any change is m
 
 ::: moniker-end
 
-::: moniker range="<= azure-devops-2019"
+::: moniker range="=azure-devops-2019"
 
 > [!div class="mx-imgBorder"]  
 > ![Work item form, Follow icon control](media/follow-work/follow-work-item.png) 
@@ -133,23 +117,7 @@ You can also view and manage work that you're following from **Boards>Work Items
 
 ::: moniker-end   
 
-::: moniker range="tfs-2018"
-
-Open **Work>Queries** and choose **Followed work items**.  
-
-<img src="media/follows-followed-work-items.png" alt="Followed work items, Follow icon control" />  
-
-From this view, you can view all items you're following across all projects. Also, you can complete similar actions supported with a query results view, such as:
-- Refresh the view
-- Add or remove visible columns
-- Sort the order of specific columns
-- Filter results by text or tags 
-- Set work item pane
-- Enter full screen mode. 
-
-You can also view and manage work that you're following from your Project pages. To learn more, see [Work across projects](../../project/navigation/work-across-projects.md). 
-
-::: moniker-end 
+ 
 
 
 ## Query work items that you're following
@@ -162,7 +130,7 @@ For example, the following query shows how to query across all projects for acti
 :::image type="content" source="media/follow-work/query-follows.png" alt-text="Query Editor, with ID In @Follows query clause":::
 
 
-## Try this next
+## Next steps
 
 > [!div class="nextstepaction"]
 > [Add, update, and follow a work item](../backlogs/add-work-items.md) 
@@ -176,4 +144,4 @@ For example, the following query shows how to query across all projects for acti
 
 ### Q: Can I add someone else to follow a work item or PR?
 
-**A:** No, you can't add another team member to follow a work item or pull request at this time. You can subscribe them to get notified based on select criteria, such as when a work item is create or modified, or a pull request is created. For details, see [Manage team notifications](../../organizations/notifications/manage-team-group-global-organization-notifications.md).	
+**A:** No, you can't add another team member to follow a work item or pull request at this time. You can subscribe them to get notified based on select criteria, such as when a work item is create or modified, or a pull request is created. For more information, see [Manage team notifications](../../organizations/notifications/manage-team-group-global-organization-notifications.md).	

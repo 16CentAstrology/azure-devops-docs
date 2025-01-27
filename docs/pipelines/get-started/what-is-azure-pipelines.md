@@ -1,9 +1,8 @@
 ---
 title: What is Azure Pipelines?
-ms.custom: seodec18
 description: Learn how to automatically build, test, and deploy your code with Azure Pipelines
 ms.topic: overview
-ms.date: 08/05/2021
+ms.date: 07/01/2024
 monikerRange: '<= azure-devops'
 ---
 
@@ -11,94 +10,103 @@ monikerRange: '<= azure-devops'
 
 [!INCLUDE [version-lt-eq-azure-devops](../../includes/version-lt-eq-azure-devops.md)]
 
-Azure Pipelines automatically builds and tests code projects to make them available to others. 
-It works with just about any language or project type. Azure Pipelines combines continuous integration (CI) and continuous delivery (CD) to test and build your code and ship it to any target. 
+Azure Pipelines is the part of Azure DevOps that automatically builds, tests, and deploys code projects. Azure Pipelines combines [continuous integration](#continuous-integration), [continuous testing](#continuous-testing), and [continuous delivery](#continuous-delivery) to build, test, and deliver your code to any destination. Azure Pipelines supports all major languages and project types.
 
-Continuous Integration (CI) is the practice used by development teams of automating merging and testing code.  Implementing CI helps to catch bugs early in the development cycle, which makes them less expensive to fix.  Automated tests execute as part of the CI process to ensure quality.  Artifacts are produced from CI systems and fed to release processes to drive frequent deployments.
+:::image type="content" source="media/pipelines-overview.png" alt-text="Screenshot of Azure Pipelines overview.":::
+
+## Azure Pipelines benefits
+
+Azure Pipelines provides a quick, easy, and safe way to automate building your projects with consistent and quality code that's readily available to users.
+
+Azure Pipelines offers the following benefits:
+
+- Works with any language or platform.
+- Deploys to different types of targets at the same time.
+- Integrates with Azure deployments.
+- Builds on Windows, Linux, or Mac machines.
+- Integrates with GitHub.
+- Works with open-source projects.
+
+## Prerequisites
+
+To use Azure Pipelines, you must:
+
+- Have an Azure DevOps organization. If you don't have one, you can [create an organization](../../organizations/accounts/create-organization.md).
+- Store your source code in a [version control system](#version-control-systems).
 ::: moniker range="< azure-devops"
-The Build service in [Azure DevOps Server](https://azure.microsoft.com/services/devops/server/) helps you set up and manage CI for your applications. 
+- Download a [build agent](../agents/windows-agent.md) and install it on a build server.
 ::: moniker-end
 
-Continuous Delivery (CD) is a process by which code is built, tested, and deployed to one or more test and production environments.  Deploying and testing in multiple environments increases quality.  CI systems produce deployable artifacts, including infrastructure and apps.  Automated release processes consume these artifacts to release new versions and fixes to existing systems.  Monitoring and alerting systems run continually to drive visibility into the entire CD process. 
+## Languages and applications
 
-Continuous Testing (CT) on-premises or in the cloud is the use of automated build-deploy-test workflows, with a choice of technologies and frameworks that test your changes continuously in a fast, scalable, and efficient manner.
+Azure Pipelines offers tasks to build, test, and deploy Node.js, Python, Java, PHP, Ruby, C#, C++, Go, XCode, .NET, Android, and iOS applications. You can run these apps in parallel on Linux, macOS, and Windows.
 
-## Version control systems
+There are tasks to run tests in many testing frameworks and services. You can also run command line, PowerShell, or shell scripts in your automation.
 
-The starting point for configuring CI and CD for your applications is to have your source code in a version control system. Azure DevOps supports two forms of version control - [Git](../../repos/get-started/what-is-repos.md) and [Azure Repos](../../repos/get-started/what-is-repos.md). Any changes you push to your version control repository will be automatically built and validated. 
+## Continuous integration
 
-## Languages
+Continuous integration (CI) is a practice development teams use to automate merging and testing code. CI helps to catch bugs early in the development cycle, making them less expensive to fix.
 
-You can use many languages with Azure Pipelines, including Python, Java, JavaScript, PHP, Ruby, C#, C++, and Go.
+To ensure quality, Azure Pipelines executes automated tests as part of the CI process. Azure Pipelines CI systems produce artifacts and feed them to release processes to drive continuous deployments.
 
+::: moniker range="< azure-devops"
+The Build service in [Azure DevOps Server](https://azure.microsoft.com/services/devops/server/) helps you set up and manage CI for your applications.
+::: moniker-end
 
-## Application types
+### Version control systems
 
-You can use Azure Pipelines with most application types, such as Java, JavaScript, Node.js, Python, .NET, C++, Go, PHP, and XCode.
-
-Azure DevOps has many tasks to build and test your application. For example, tasks exist to build .NET, Java, Node, Android, Xcode, and C++ applications. Similarly, there are tasks to run tests using many testing frameworks and services. You can also run command line, PowerShell, or Shell scripts in your automation.
-
-## Deployment targets
-
-Use Azure Pipelines to deploy your code to multiple targets. Targets include virtual machines, environments, containers, on-premises and cloud platforms, or PaaS services. You can also publish your mobile application to a store.
-
-Once you have continuous integration in place, the next step is to create a release definition to automate the deployment of your application to one or more environments. This automation process is again defined as a collection of tasks. 
+Azure Pipelines requires your source code to be in a version control system. Azure Pipelines supports several forms of version control, including [Azure Repos Git, GitHub, and TFVC](../repos/index.md). You can set up Azure Pipelines to automatically build and validate any changes you push to your version control repository.
 
 ## Continuous testing
 
-Whether your app is on-premises or in the cloud, you can automate build-deploy-test workflows and choose the technologies and frameworks, then [test your changes continuously](../ecosystems/dotnet-core.md#run-your-tests) in a fast, scalable, and efficient manner. 
+Azure Pipelines can automate build-deploy-test workflows in your chosen technologies and frameworks, whether your app is on-premises or in the cloud. You can [test your changes continuously](../ecosystems/dotnet-core.md#run-your-tests) in a fast, scalable, and efficient manner. Continuous testing lets you:
 
-* Maintain quality and find problems as you develop. Continuous testing with Azure DevOps Server ensures your app still works after every check-in and build, enabling you to find problems earlier by running tests automatically with each build.
-* Any test type and any test framework. Choose the test technologies and frameworks you prefer to use.
-* Rich analytics and reporting. When your build is done, review your test results to start resolving the problems you find. Rich and actionable build-on-build reports 
-let you instantly see if your builds are getting healthier. But it's not just about speed - detailed and customizable test results measure the quality of your app.
+- Maintain quality and find problems during development. You can find problems earlier by running tests automatically with each build, ensuring your app still works after every checkin and build.
+
+- Use any test type and test framework. Choose your preferred test technologies.
+
+- View rich analytics and reporting. When your build is done, you can review your test results to resolve any issues. Actionable build-on-build reports let you instantly see if your builds are getting healthier. Detailed and customizable test results measure the quality of your app.
+
+## Continuous delivery
+
+Continuous delivery (CD) is the process of building, testing, and deploying code to one or more test or production environments. Deploying and testing in multiple environments optimizes quality.
+
+Azure Pipelines CD systems produce deployable artifacts, including infrastructure and apps. Automated release processes consume these artifacts to release new versions and fixes to existing systems. Systems that continually monitor and send alerts drive visibility into the CD process.
+
+### Deployment targets
+
+Use Azure Pipelines to deploy your code to multiple targets. Targets include virtual machines, environments, containers, on-premises and cloud platforms, and platform-as-a-service (PaaS) services. You can also publish your mobile application to a store.
+
+Once you have CI in place, you can create a release definition to automate the deployment of your application to one or more environments. The automation process is defined as a collection of tasks.
 
 ## Package formats
 
-To produce packages that can be consumed by others, you can publish NuGet, npm, or Maven packages to the built-in package management repository in Azure Pipelines. You also can use any other package management repository of your choice.
+To produce packages that external users can consume, you can integrate package management into your CI/CD pipelines. You can publish NuGet, npm, Maven, or Python packages as artifacts to the built-in Azure Pipelines package management repository, or any other package management repository you choose. For more information about Azure Artifacts, see [Artifacts in Azure Pipelines](../artifacts/artifacts-overview.md).
 
-## What do I need to use Azure Pipelines?
+## Azure Pipelines pricing
 
-To use Azure Pipelines, complete the following tasks:
+::: moniker range=">= azure-devops"
+If you use public projects, Azure Pipelines is free, but you need to [request the free grant of parallel jobs](https://aka.ms/azpipelines-parallelism-request). Existing organizations and projects don't need to request this grant. For more information, see [What is a public project](../../organizations/projects/about-projects.md).
 
-- Create or already have an organization in Azure DevOps.
-- Store your source code in a version control system.
-::: moniker range="< azure-devops"
-- Download a [build agent](../agents/v2-windows.md) and install it on a build server.
+If you use private projects, you can run up to 1,800 minutes or 30 hours of pipeline jobs free every month.
+
+For more information, see [Pricing based on parallel jobs](../licensing/concurrent-jobs.md)
+and [Pricing for Azure DevOps Services](https://azure.microsoft.com/pricing/details/devops/azure-devops-services/).
+
 ::: moniker-end
 
-### Pricing
-
-#### Azure DevOps Services
-
-If you use public projects, Azure Pipelines is free. For more information, see [What is a public project?](../../organizations/projects/about-projects.md)
-If you use private projects, you can run up to 1,800 minutes (30 hours) of pipeline jobs for free every month.
-For more information about how the pricing works based on [parallel jobs](../licensing/concurrent-jobs.md).
-For more information, see [Pricing for Azure DevOps Services](https://azure.microsoft.com/pricing/details/devops/azure-devops-services/).
-
-#### Azure DevOps Server
-
-If you have five or less active users, [Azure DevOps Express](https://azure.microsoft.com/services/devops/server/) is free, simple to set up, and installs on both client and server operating systems. It supports all the same features as Azure DevOps Server 2019. 
+::: moniker range="< azure-devops"
+For five or fewer active users, [Azure DevOps Express](https://azure.microsoft.com/services/devops/server/) is free, simple to set up, and installs on both client and server operating systems. It supports all the same features as Azure DevOps Server 2019.
 
 For more information, see [Pricing for Azure DevOps Server](https://azure.microsoft.com/pricing/details/devops/server/).
 
+::: moniker-end
 
-## Why should I use Azure Pipelines?
+## Related content
 
-Implementing CI and CD pipelines helps to ensure consistent and quality code that's readily available to users. 
-And, Azure Pipelines provides a quick, easy, and safe way to automate building your projects and making them available to users.
-
-Use Azure Pipelines because it supports the following scenarios:  
-
-* Works with any language or platform 
-* Deploys to different types of targets at the same time 
-* Integrates with Azure deployments 
-* Builds on Windows, Linux, or Mac machines 
-* Integrates with GitHub 
-* Works with open-source projects
-
-## Next steps
+- [Sign up for Azure Pipelines](pipelines-sign-up.md)
+- [Create your first pipeline](../create-first-pipeline.md)
+- [Customize your pipeline](../customize-pipeline.md)
 
 > [!div class="nextstepaction"]
 > [Use Azure Pipelines](pipelines-get-started.md)
- 

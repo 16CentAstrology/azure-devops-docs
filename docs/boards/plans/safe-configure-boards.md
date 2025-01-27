@@ -4,8 +4,8 @@ titleSuffix: Azure Boards
 description: Learn how to configure Azure Boards to support epics, release trains, and multiple backlogs to support SAFe® practices.
 ms.service: azure-devops-boards
 ms.assetid:  
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: tutorial
 monikerRange: '<= azure-devops'
 ms.date: 10/20/2021
@@ -32,8 +32,11 @@ Once you've completed these core configurations, you can then consider customizi
  
 If you're new to Azure Boards, we recommend that you review [About teams and Agile tools](../../organizations/settings/about-teams-and-settings.md) and [About area and iteration (sprint) paths](../../organizations/settings/about-areas-iterations.md) before adding and configuring your teams. Also, two excellent articles to review around team structure and Agile culture are [Introduction to planning efficient workloads with DevOps](/devops/plan/planning-efficient-workloads-with-devops) and [Building productive, customer focused teams](/devops/plan/building-productive-teams). 
 
-
 [!INCLUDE [temp](../includes/note-safe-articles.md)]
+
+## Prerequisites
+
+[!INCLUDE [prerequisites-project-admin](../includes/prerequisites-project-admin.md)]
 
 ## Understand team hierarchy 
 
@@ -54,22 +57,20 @@ We'll then configure the area path to the following hierarchy and configuring ea
 > [!TIP]    
 > If you have a large number of teams, area paths, and iterations that you need to add, you may want to use command line or programmatic tools. See the [Command line and  programmatic tools](#command-line-and-programmatic-tools) provided later in this article. 
 
-All teams can manage their own workload and priorities while clearly understanding how their work supports those epics managed in the portfolio team's backlog. At the same time, the portfolio team can monitor progress of its backlog on their own Kanban board, prioritize the items on their backlog, and view progress across release trains.
+All teams can manage their own workload and priorities while clearly understanding how their work supports those epics managed in the portfolio team's backlog. At the same time, the portfolio team can monitor progress of its backlog on their own board, prioritize the items on their backlog, and view progress across release trains.
 
 While the above may sound complicated, it actually takes little configuration to set up the teams and get started.
-To go from one project with one default team, we'll first define each team while automatically creating a default area path for that team. Then we'll reconfigure the flat set of area paths to a hierarchical structure. Next, will define the iteration paths to support the release structure we want and the program and Agile teams to use. Lastly, we'll configure each team and populate the membership of teams.  
+To go from one project with one default team, first define each team while automatically creating a default area path for that team. Then reconfigure the flat set of area paths to a hierarchical structure. Next, define the iteration paths to support the release structure you want and the program and Agile teams to use. Lastly, configure each team and populate the membership of teams.  
 
 
-<a id="define-teams" />
+<a id="define-teams"></a>
 
 ## Define your teams 
 
 To start, we'll add each team, creating a default area path for each. Later in this article, we'll configure those area paths into the necessary hierarchy. This structure maps the following SAFe® teams to Azure Boards teams:  
 - Portfolio team -> default top-level team, the Fabrikam team (already defined) 
 - Program teams -> secondary-level teams, Fiber Suite, and Service Suite  
-- Agile teams -> tertiary-level teams defined under Fiber Suite and Service Suite.  
-
-You'll need to be a [project administrator](../../organizations/security/add-users-team-project.md) to complete these steps. If you need more-detailed guidance, see [Portfolio management](portfolio-management.md).  
+- Agile teams -> tertiary-level teams defined under Fiber Suite and Service Suite.
 
 Add each team, one by one.
 
@@ -99,7 +100,7 @@ Add each team, one by one.
 
 1. Optional. If you have two or more Portfolio teams, create a team for each of them.   
 
-<a id="configure-area-paths" /> 
+<a id="configure-area-paths"></a> 
 
 ## Configure Area Paths 
 
@@ -144,17 +145,17 @@ If you already have iterations for your default team, you can rename them. You'l
 
 1. From the **Project Settings** page, choose **Project configuration** and then **Iterations**.  
 
-1. Under the default iteration, which shares the same name as the project, create a child iteration that will represent your first program increment (PI). Optionally, add a start and end date for the PI, but keep in mind that the iteration will be broken down further into sprints.
+2. Under the default iteration, which shares the same name as the project, create a child iteration that represents your first program increment (PI). Optionally, add a start and end date for the PI, but keep in mind that the iteration gets broken down further into sprints.
 
 	> [!div class="mx-imgBorder"]
 	> ![Create a child iteration.](media/safe-configure/define-pi1-iteration.png) 
 
-2. Next, create a child iteration for each Sprint within the PI. Set dates for these sprints to correspond your Agile teams' cadences.  
+3. Next, create a child iteration for each Sprint within the PI. Set dates for these sprints to correspond your Agile teams' cadences.  
 
 	> [!div class="mx-imgBorder"]
 	> ![Iterations page, create IP Sprint iteration](media/safe-configure/define-sprint1-iteration.png)
 
-3. Continue to add as many iterations as needed to meet the time box cadence structure for all your teams. 
+4. Continue to add as many iterations as needed to meet the time box cadence structure for all your teams. 
 
 	When finished, you should have a structure similar to the following image. 
 
@@ -164,7 +165,7 @@ If you already have iterations for your default team, you can rename them. You'l
 	> [!TIP]
 	> You can drag and drop Iteration Paths to structure your iterations, similar to as shown in Step 2 under Configure Area Paths. Azure Boards always lists the iteration paths in order of their dates under each parent node. 
 
-<a id="configure-your-teams" /> 
+<a id="configure-your-teams"></a> 
 
 ## Configure your teams 
 
@@ -351,7 +352,7 @@ For teams that support several other teams, such as a UX Design team, configure 
 
 1. Add a team for each Shared Services team. Refer to [Define your teams](#define-teams) for details.  
 
-1. Return to the **Project configuration>Area Paths** page and under each shared services area path, add sub area paths for each Agile team supported by the shared services. For details, see [Configure Area Paths](#configure-area-paths) provided earlier in this article. 
+1. Return to the **Project configuration>Area Paths** page and under each shared services area path, add sub area paths for each Agile team supported by the shared services. For more information, see [Configure Area Paths](#configure-area-paths) provided earlier in this article. 
 
     For example, here we add four sub area paths under the UX Design area path, one for each Agile team supported by the UX Design team. 
 
@@ -377,8 +378,8 @@ For teams that support several other teams, such as a UX Design team, configure 
     Work items that appear on shared area paths appear on the backlogs and boards of the associated teams. 
 
 
-<a id="programmatic-tools" /> 
-<a id="command-line-and-programmatic-tools" /> 
+<a id="programmatic-tools"></a> 
+<a id="command-line-and-programmatic-tools"></a> 
 
 ::: moniker range=">= azure-devops-2020"
 
@@ -408,7 +409,7 @@ You can use Azure DevOps REST APIs to add or update the following artifacts:
 
 ::: moniker-end
 
-## Try this next
+## Next steps
 
 > [!div class="nextstepaction"]
 > [Customize Azure Boards to support SAFe®](safe-customize.md)  

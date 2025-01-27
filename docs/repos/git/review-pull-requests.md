@@ -54,7 +54,7 @@ In this article you learn how to:
 
 - **Repos** must be enabled in your Azure DevOps project settings. If the **Repos** hub and associated pages don't display, see [Turn an Azure DevOps service on or off](../../organizations/settings/set-services.md) to reenable **Repos**.
  
-- To review PRs, you must be a member of the Azure DevOps project the PR is in, with **Basic** access level or higher.
+- To review PRs, be a member of the Azure DevOps project the PR is in, with at least **Basic** access.
 
   - If you don't have a project, create one or [sign up for free](../../user-guide/sign-up-invite-teammates.md).
   
@@ -69,17 +69,13 @@ In this article you learn how to:
 
 - **Repos** must be enabled in your Azure DevOps project settings. If the **Repos** hub and associated pages don't display, see [Turn an Azure DevOps service on or off](../../organizations/settings/set-services.md) to reenable **Repos**.
 
-- To review PRs, you must be a member of the Azure DevOps project with **Basic** access level or higher. If you aren't a project member, [get added](../../organizations/security/add-users-team-project.md).
+- To review PRs, be a member of the Azure DevOps project with at least **Basic** access. If you aren't a project member, [get added](../../organizations/security/add-users-team-project.md).
 
 ::: moniker-end
 
-::: moniker range="< azure-devops-2019"
 
-- To view or review PRs, you must be a member of the Azure DevOps project with **Basic** access level or higher. If you aren't a project member, [get added](../../organizations/security/add-users-team-project.md).
 
-::: moniker-end
-
-- To learn more about permissions and access, see [Default Git repository and branch permissions](../../organizations/security/default-git-permissions.md) and [About access levels](../../organizations/security/access-levels.md).
+- For more information about permissions and access, see [Default Git repository and branch permissions](../../organizations/security/default-git-permissions.md) and [About access levels](../../organizations/security/access-levels.md).
 
 ::: moniker range="azure-devops"
 
@@ -92,14 +88,20 @@ You can manage PRs in Azure DevOps Services by using the [Azure DevOps command l
 
 ::: moniker range=">= azure-devops-2022"
 
-Pull requests let designated reviewers examine, discuss, and vote on proposed changes before those changes are applied to a target branch of a repo. The following steps describe how reviewers of PRs in Azure Repos can navigate through a PR to understand the proposed changes.
+Pull requests let designated reviewers examine, discuss, and vote on proposed changes before those changes are applied to a target branch of a repo. Keep in mind that if development is carried out with the same files on different branches there may be a conflicting changes. In that case it is required to carefully analyze and resolve those conflicts. To do so, may require manually editing the file to correctly apply the changes from either source, target or both branches. Taking all changes from either source or target (which can be done by a single button click) may not be optimal and can result in loss of some required changes. This can be done using ADO tools, or it will be more convenient to use development tools (such as Visual Studio).
+
+To learn more see [Resolve merge conflicts](/azure/devops/repos/git/merging?view=azure-devops&tabs=visual-studio-2019&preserve-view=true).
+
+The following steps describe how reviewers of PRs in Azure Repos can navigate through a PR to understand the proposed changes:
 
 1. From your web browser, open the team project for your Azure DevOps organization. Choose **Repo > Pull requests** to list the PRs. A newly opened PR defaults to the **Overview** tab.
 
 1. The **Overview** tab of a PR shows the title, description, reviewers, linked worked items, history, status, and comments. Read the PR description to see the proposed changes. View the comments to understand the issues raised by other reviewers.
-
+    >[!NOTE]
+    >Each file is estimated for a number of modifications and is marked with a "+" sign or a "rename, edit" label next to its name. When a file has more than 50-percent changes, it is considered *renamed.* This is the default threshold for git repositories that cannot be changed.
+    
     :::image type="content" source="media/review-pull-requests/2022/overview-tab.png" border="true" alt-text="Screenshot of the Azure Repos PR overview tab.":::
-
+    
 1. Select the **Files** tab to review all content changes in the PR's source branch. The initial view shows a summary view of all file changes. Choose the **View** button next to a file to view only that file's changes. If the file was modified, the **View** button opens a diff view. If the file was added or deleted, the **View** button opens a content pane.
 
     :::image type="content" source="media/review-pull-requests/2022/files-tab.png" border="true" alt-text="Screenshot of a change summary view in the Files tab of a P R." lightbox="media/review-pull-requests/2022/files-tab-lrg.png":::
@@ -151,7 +153,7 @@ Select the PR **Files** tab to view the actual changes made to the source branch
 > [!NOTE]
 > The different changes between Azure DevOps Pull request and Azure DevOps Branch compare is caused by the different comparison methods.
 
-There are two comparison methods for the git diff command. Two-dot (```git diff A..B```) and three-dot (```git diff A...B```). By default, pull requests show a three-dot diff while the Branch Comparison instead shows a two-dot diff.
+There are two comparison methods for git diff command: Two-dot (```git diff A..B```) and three-dot (```git diff A...B```). By default, Pull Requests show a three-dot diff while the Branch Comparison instead shows a two-dot diff.
 
 For example:
 ```
@@ -160,9 +162,10 @@ For example:
 A---B---F---G   master
 ```
 
-```git diff branch..master``` will retrieve C, D, E, F, G commits. While ```git diff branch...master``` will produce only F, G.
+Pull Requests: ```git diff branch...master``` will produce only C, D, E commits. 
+Branch Compare: ```git diff branch..master``` will produce C, D, E, F, G commits.
 
-Here are the relevant documentations about the git diff commands: [three-dot-and-two-dot-git-diff-comparisons](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-comparing-branches-in-pull-requests#three-dot-and-two-dot-git-diff-comparisons) & [git diff](https://git-scm.com/docs/git-diff)
+For more details, see [three-dot-and-two-dot-git-diff-comparisons](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-comparing-branches-in-pull-requests#three-dot-and-two-dot-git-diff-comparisons) and [git diff](https://git-scm.com/docs/git-diff)
 
 :::image type="content" source="media/review-pull-requests/2020/pull-request-files.png" alt-text="Screenshot of a file diff view in the Files tab of an Azure Repos PR.":::
 
@@ -314,7 +317,7 @@ To like your own or someone else's comment, hover over the comment and select th
 
 ::: moniker-end
 
-::: moniker range="<= azure-devops-2019"
+::: moniker range="=azure-devops-2019"
 
 ### Like a comment
 

@@ -2,7 +2,7 @@
 title: Check out multiple repositories in your pipeline
 description: Learn how to check out multiple repositories in your pipeline
 ms.topic: reference
-ms.date: 11/29/2022
+ms.date: 01/25/2023
 monikerRange: "> azure-devops-2019"
 ---
 
@@ -24,7 +24,7 @@ The following repository types are supported.
         [Azure Repos Git](azure-repos-git.md) (`git`)
     :::column-end:::
     :::column span="2":::
-        * Azure DevOps Server 2020 (limited to repositories in the same organization)
+        * Azure DevOps Server (limited to repositories in the same organization)
         * Azure DevOps Services
     :::column-end:::
 :::row-end:::
@@ -57,7 +57,7 @@ The following repository types are supported.
 :::row-end:::
 
 > [!IMPORTANT]
-> Only [Azure Repos Git](azure-repos-git.md) (`git`) repositories in the same organization as the pipeline are supported for multi-repo checkout in Azure DevOps Server 2020.
+> Only [Azure Repos Git](azure-repos-git.md) (`git`) repositories in the same organization as the pipeline are supported for multi-repo checkout in Azure DevOps Server.
 
 > [!NOTE]
 > Azure Pipelines provides **Limit job scope** settings for Azure Repos Git repositories.
@@ -174,11 +174,14 @@ If your repository doesn't require a service connection, you can declare it inli
 
 ```yaml
 steps:
+- checkout: self
 - checkout: git://MyProject/MyRepo # Azure Repos Git repository in the same organization
 ```
 
 > [!NOTE]
-> In the previous example, the `self` repository is not checked out. If you specify any `checkout` steps, you must include `checkout: self` in order for `self` to be checked out.
+> In the previous example, the `self` checkout repository is specified in order to checkout the source of the repository associated with the pipeline.
+>
+> If you are using the default Azure Repos Git repository (that has the same name as the project), use the format `- checkout: git://MyProject/MyRepo`.
 
 ## Checkout path
 
@@ -195,6 +198,22 @@ If a `path` is specified for a `checkout` step, that path is used, relative to `
 
 > [!NOTE]
 > If you are using default paths, adding a second repository `checkout` step changes the default path of the code for the first repository. For example, the code for a repository named `tools` would be checked out to `C:\agent\_work\1\s` when `tools` is the only repository, but if a second repository is added, `tools` would then be checked out to `C:\agent\_work\1\s\tools`. If you have any steps that depend on the source code being in the original location, those steps must be updated.
+
+## Workspace repository
+
+When multiple `checkout` steps (and different paths for each) are used in your pipeline, you may want to use the root directory of one the repositories as the default working directory. If so, you can set the `workspaceRepo` input to `true` for the related `checkout` step.
+
+```yaml
+- checkout: git://project/first
+  path: repo/first-repo
+
+- checkout: git://project/second
+  path: repo/second-repo
+  workspaceRepo: true
+
+- pwsh: pwd
+# Expected output: $(Pipeline.Workspace)/repo/second-repo
+```
 
 ## Checking out a specific ref
 
@@ -223,6 +242,21 @@ steps:
 - checkout: MyGitHubRepo
 ```
 
+The following example uses [tags](../../repos/git/git-tags.md) to check out the commit referenced by `MyTag`.
+
+```yaml
+resources:
+  repositories:
+  - repository: MyGitHubRepo
+    type: github
+    endpoint: MyGitHubServiceConnection
+    name: MyGitHubOrgOrUser/MyGitHubRepo
+    ref: refs/tags/MyTag
+
+steps:
+- checkout: MyGitHubRepo
+```
+
 :::moniker range=">azure-devops-2020"
 
 ## Triggers
@@ -233,7 +267,7 @@ You can trigger a pipeline when an update is pushed to the `self` repository or 
 - You keep your YAML file in a separate repository from the application code. You want to trigger the pipeline every time an update is pushed to the application repository.
 
 > [!IMPORTANT]
-> Repository resource triggers only work for Azure Repos Git repositories in the same organization at present. They do not work for GitHub or Bitbucket repository resources.
+> Repository resource triggers only work for Azure Repos Git repositories in the same organization and when the `self` repository type is Azure Repos Git. They do not work for GitHub or Bitbucket repository resources.
 >
 > `batch` is not supported in repository resource triggers.
 
@@ -279,9 +313,13 @@ resources:
     trigger:
     - main
     - release
+steps:
+- checkout: self
+- checkout: A
+- checkout: B
 ```
 
-The following table shows which versions are checked out for each repository by a pipeline using the above YAML file, unless you explicitly override the behavior during `checkout`.
+The following table shows which versions are checked out for each repository by a pipeline using the above YAML file.
 
 | Change made to | Pipeline triggered | Version of YAML | Version of `self` | Version of `A` | Version of `B` |
 |----------------|--------------------|-----------------|-------------------|----------------|----------------|
@@ -299,7 +337,7 @@ You can also trigger the pipeline when you create or update a pull request in an
 
 When you check out multiple repositories, some details about the `self` repository are available as [variables](../build/variables.md).
 When you use multi-repo triggers, some of those variables have information about the triggering repository instead.
-Details about all of the repositories consumed by the job are available as a [template context object](../process/templates.md#context) called `resources.repositories`.
+Details about all of the repositories consumed by the job are available as a [template context object](../process/template-expressions.md#context) called `resources.repositories`.
 
 For example, to get the ref of a non-`self` repository, you could write a pipeline like this:
 

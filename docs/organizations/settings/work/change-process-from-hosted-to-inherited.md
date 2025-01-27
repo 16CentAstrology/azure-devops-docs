@@ -4,8 +4,8 @@ titleSuffix: Azure DevOps
 description: Upgrade a project that uses a Hosted XML process model to an inherited process in Azure DevOps Services
 ms.custom: inherited-process
 ms.service: azure-devops-boards
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: how-to
 monikerRange: 'azure-devops'
 ms.date: 05/30/2018
@@ -22,7 +22,7 @@ Once you've [cloned your Hosted XML process to an inherited process](upgrade-hos
 
 ## Prerequisites 
 
-- You must be a member of the Project Administrators group for the project you want to change, or a member of the Project Collection Administrators group.
+- Be a member of the Project Administrators group for the project you want to change, or a member of the Project Collection Administrators group.
 
 [!INCLUDE [temp](../includes/open-process-admin-context-ts-only.md)]
 

@@ -8,11 +8,12 @@ metadata:
   titleSuffix: Azure DevOps 
   description: Test your software using manual and exploratory testing services to improve your overall code quality. 
   ms.service: azure-devops-test-plans
+  ms.custom: UpdateFrequency3
   ms.assetid: 00f4ed452-fbb8-45f9-8f0a-343702aac5b8  
   ms.topic: landing-page 
-  author: KathrynEE 
-  ms.author: kaelli 
-  ms.date: 09/30/2019 
+  ms.author: jeom
+  author: raviLiftr
+  ms.date: 06/26/2024 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 
@@ -28,6 +29,8 @@ landingContent:
             url: ../test/overview.md
           - text: Navigate Test Plans
             url: ../test/navigate-test-plans.md
+          - text: Store custom data in test plan and/or test result
+            url: ../test/custom-fields.md
   - title: Run manual tests
     linkLists:
       - linkListType: quickstart
@@ -73,7 +76,7 @@ landingContent:
           - text: Go
             url: ../pipelines/ecosystems/go.md#test
           - text: Python
-            url: ../pipelines/ecosystems/python.md#run-tests
+            url: ../pipelines/ecosystems/customize-python.md#run-tests
           - text: UI testing using Selenium
             url: ../pipelines/test/continuous-test-selenium.md
           - text: Review code coverage results

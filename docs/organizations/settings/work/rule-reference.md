@@ -2,13 +2,13 @@
 title: Default rule reference
 titleSuffix: Azure DevOps 
 description: Default rules and the rule engine  
-ms.custom: inherited-process
+ms.custom: inherited-process, engagement-fy23
 ms.service: azure-devops-boards
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 monikerRange: "<= azure-devops"
 ms.topic: conceptual
-ms.date: 04/04/2022
+ms.date: 01/17/2023
 
 
 #Customer intent: As a process designer, I need to understand how rules work and the limits to defining rules for a work item type or process, so I can add the right rules to support my business processes.
@@ -65,7 +65,7 @@ Default rules and behaviors that govern these fields include:
 1. These rules are needed when a work item type has custom states, or the work item type is a custom work item type.
 1. These rules only apply to inherited processes; they are never generated for the Hosted XML or On-premises XML processes. 
 
-Workflow states are associated with state categories to support the workflow on Kanban boards. To learn more, see [How workflow states and state categories are used in Backlogs and Boards](../../../boards/work-items/workflow-and-state-categories.md).
+Workflow states are associated with state categories to support the workflow on boards. For more information, see [How workflow states and state categories are used in Backlogs and Boards](../../../boards/work-items/workflow-and-state-categories.md).
  
 
 ### State Change Date field rules
@@ -73,7 +73,7 @@ Workflow states are associated with state categories to support the workflow on 
 These rules are technically a lot simpler than Closed By/Closed Date rules because they are not dependent on any particular state. For any work item type, the same rules will always work. They need to be auto-generated because some OOB work item types do not contain the State Change Date field, so when the user adds this field to a custom work item type, these rules need to be auto-generated as well. The same principles for Closed By/Closed Date rules apply here as well.
  
 
-<a id="custom-rules" /> 
+<a id="custom-rules"></a> 
 
 ## Custom rules
 
@@ -92,7 +92,7 @@ Note the following:
 
 ### Rule composition
 
-<a id="ip-rule-composition" /> 
+<a id="ip-rule-composition"></a> 
 
 # [Inheritance process](#tab/inheritance)
 
@@ -198,7 +198,7 @@ The On-premises XML process defines rules using XML elements. All of these rule 
 
 When you want a rule to apply to a field throughout the life of the work item, specify it within the `FIELD` section. For example, a field that is required for a bug that is new and active remains required until the bug is closed. Otherwise, if you want it applied based on a change in State, Reason, or transition, specify it within the `WORKFLOW` section.
 
-**State** (System.State) and **Reason** (System.Reason) fields are defined within the `WORKFLOW` section. You can specify most field rules to apply to a field during a change of state, selection of a reason, or for a specific transition. To learn more, see [Change the workflow for a work item type](../../../reference/add-modify-wit.md).
+**State** (System.State) and **Reason** (System.Reason) fields are defined within the `WORKFLOW` section. You can specify most field rules to apply to a field during a change of state, selection of a reason, or for a specific transition. For more information, see [Change the workflow for a work item type](../../../reference/add-modify-wit.md).
  
  
 Otherwise, specify a rule to be evaluated only during a change in state. These rules are defined within the `WORKFLOW` section under the `STATE`, `REASON`, or `TRANSITION` elements. All rules, except for `HELPTEXT`, can be applied within a `FIELD` (Workflow) element.
@@ -273,13 +273,13 @@ The rule engine restricts setting conditions or actions to system fields except 
 If you don't see a field listed in the drop-down menu of the rule user interface for the Inheritance process, this is why. For example, if you try to make **Area Path** (System.AreaPath) read-only based on a condition, the Area Path field isn't available for selection. Even if you're able to specify a system field, the rule engine may restrict you from saving the rule. 
  
 
-<a id="clear" /> 
+<a id="clear"></a> 
 
 ## Default and copy rules 
 
 Default and copy rules modify the values of work item fields. They define run-time behavior and constraints, such as specifying default values, clearing fields, requiring fields to be defined, and more. 
 
-::: moniker range="tfs-2018 || azure-devops-2020 || azure-devops"
+::: moniker range="=azure-devops-2020 || =azure-devops"
 You can restrict application of these rules based on the current user's group membership as described in [User or group membership rule restrictions](#membership).
 ::: moniker-end
 
@@ -323,7 +323,7 @@ Most of these rule actions can be applied with the selection of any condition.
 
 # [On-premises XML process](#tab/on-premises)
 
-These rules support setting defaults, copying values from one field to another, or enforcing a field value to match a prescribed pattern. For the syntax structure and examples, see [Define a default value or copy a value to a field](../../../reference/xml/define-default-copy-value-field.md).
+These rules support setting defaults, copying values from one field to another, or enforcing a field value to match a prescribed pattern. For the syntax structure and examples, see [Define a default value or copy a value to a field](/previous-versions/azure/devops/reference/xml/define-default-copy-value-field).
 
 :::row:::
    :::column span="1":::
@@ -405,13 +405,13 @@ These rules support setting defaults, copying values from one field to another, 
 ---  
 
 
-<a id="require" /> 
+<a id="require"></a> 
 
 ## Constraint rules
 
 Constraint rules restrict changing the value of a field. They define the valid states for a work item. Each constraint operates on a single field. Constraints are evaluated on the server on work item save, and if any constraint is violated the save operation is rejected.  
  
-::: moniker range="tfs-2018 || azure-devops-2020 || azure-devops"
+::: moniker range="=azure-devops-2020 || =azure-devops"
 You can restrict application of these rules based on the current user's group membership as described in [User or group membership rule restrictions](#membership).
 ::: moniker-end
  
@@ -509,7 +509,7 @@ Most of these rule actions can be applied with the selection of any condition.
    :::column-end:::
    :::column span="3":::
       Clears the field of any value that it contains and then makes the field read-only when a user saves the work item. You shouldn't use `EMPTY` with `READONLY`.  
-      `EMPTY` is primarily used [during state transition](../../../reference/xml/transition-xml-element.md) to clear fields that apply to the state to which the item is transitioning.  
+      `EMPTY` is primarily used [during state transition](/previous-versions/azure/devops/reference/xml/transition-xml-element) to clear fields that apply to the state to which the item is transitioning.  
       > [!div class="tabbedCodeSnippets"]  
       > ```XML  
       > <FIELD refname="MyCorp.SubStatus" />  
@@ -524,7 +524,7 @@ Most of these rule actions can be applied with the selection of any condition.
       `MATCH`
    :::column-end:::
    :::column span="3":::
-      Forces entries made to a String field to conform to a [specified pattern of characters or numbers](../../../reference/xml/apply-pattern-matching-to-string-field.md). If you define multiple `MATCH` elements, the value is considered valid if it matches any of the patterns that you specify. If at least one element succeeds, the field has a valid value.  
+      Forces entries made to a String field to conform to a [specified pattern of characters or numbers](/previous-versions/azure/devops/reference/xml/apply-pattern-matching-to-string-field). If you define multiple `MATCH` elements, the value is considered valid if it matches any of the patterns that you specify. If at least one element succeeds, the field has a valid value.  
       > [!div class="tabbedCodeSnippets"]  
       > ```XML  
       > <FIELD refname="MyCorp.GitHubURL" name="GitHub URL" type="String">  
@@ -588,7 +588,7 @@ Most of these rule actions can be applied with the selection of any condition.
 ---  
 
 
-<a id="pick-list" /> 
+<a id="pick-list"></a> 
 
 ## Pick lists 
 
@@ -627,7 +627,7 @@ For an Inherited process, pick lists are defined through the Edit field dialog.
 
 # [On-premises XML process](#tab/on-premises)
 
-You define pick lists using XML elements listed in the following table. For syntax structure and examples, see [Define pick lists](../../../reference/xml/define-pick-lists.md).
+You define pick lists using XML elements listed in the following table. For syntax structure and examples, see [Define pick lists](/previous-versions/azure/devops/reference/xml/define-pick-lists).
 
 You can combine lists, and expand or contract lists. Also, you can restrict application of these rules based on the current user's group membership as described in [User or group membership rule restrictions](#membership).
 
@@ -695,7 +695,7 @@ To avoid validation errors that would otherwise occur when members leave the tea
 
 
 
-<a id="conditional-rules" />
+<a id="conditional-rules"></a>
 
 ## Conditional field values or changes 
 
@@ -776,7 +776,7 @@ You can specify multiple conditional rules per field. However, you can only spec
 
 The following XML elements are used to set conditions for when other rules are evaluated. You can specify multiple conditional rules per field. However, you can only specify a single driving field per conditional rule. You can't nest conditional rules. Supported actions for each process model include those listed in the following table.  
 
-For syntax structure and examples, see [Assign conditional-based values and rules](../../../reference/xml/assign-conditional-based-values-and-rules.md). You can restrict application of these rules based on the current user's group membership as described in [User or group membership rule restrictions](#membership).
+For syntax structure and examples, see [Assign conditional-based values and rules](/previous-versions/azure/devops/reference/xml/assign-conditional-based-values-and-rules). You can restrict application of these rules based on the current user's group membership as described in [User or group membership rule restrictions](#membership).
 
 :::row:::
    :::column span="1":::
@@ -827,9 +827,9 @@ For syntax structure and examples, see [Assign conditional-based values and rule
 ---  
 
 
-<a id="apply-ignore" /> 
-<a id="membership" /> 
-<a id="apply-or-ignore-rules-based-on-user-or-group" /> 
+<a id="apply-ignore"></a> 
+<a id="membership"></a> 
+<a id="apply-or-ignore-rules-based-on-user-or-group"></a> 
 
 ## User or group membership rule restrictions   
 
@@ -840,7 +840,7 @@ You can restrict application of a rule based on the current user's membership. W
 
 
 > [!TIP]    
-> To avoid rule evaluation issues that may arise, specify Azure DevOps security groups and not Azure Active Directory or Active Directory security groups. To learn more, see [Default rules and the rule engine](rule-reference.md). 
+> To avoid rule evaluation issues that may arise, specify Azure DevOps security groups and not Microsoft Entra ID or Active Directory security groups. For more information, see [Default rules and the rule engine](rule-reference.md). 
 
 # [Inheritance process](#tab/inheritance)
 
@@ -936,7 +936,7 @@ To restrict a rule based on the current user's membership, you specify either th
 
 
 
-<a id="tokens" /> 
+<a id="tokens"></a> 
 
 ### Use tokens to reference users or groups
 
@@ -951,7 +951,7 @@ Examples of tokens include the following:
 - [*CollectionName*], such as [fabrikam], [myorganization] 
 
 
-To learn about the scopes available for your project or organization, go to the **Project Settings>Permissions>Groups** or **Organization Settings>Permissions>Groups** page, you can filter the list as needed. For example, the following image shows the first four entries to a filtered list based on *Azure DevOps*. To learn more, see [Change project-level permissions](../../security/change-project-level-permissions.md) or 
+To learn about the scopes available for your project or organization, go to the **Project Settings>Permissions>Groups** or **Organization Settings>Permissions>Groups** page, you can filter the list as needed. For example, the following image shows the first four entries to a filtered list based on *Azure DevOps*. For more information, see [Change project-level permissions](../../security/change-project-level-permissions.md) or 
 [Change project collection-level permissions](../../security/change-organization-collection-level-permissions.md). 
 
 :::image type="content" source="media/rules/permissions-group-scope.png" alt-text="Screenshot of filtered Permissions groups list.":::
@@ -985,7 +985,7 @@ Examples of tokens include the following:
 > [!NOTE]    
 > [Project], [GLOBAL], and [Team Foundation] are used as is. You don't replace them with the name of the project, collection, or server name. 
 
-To learn about the scopes available for your project or collection, go to the **Project Settings>Permissions>Groups** or **Collection Settings>Permissions>Groups** page. Filter the list as needed. For example, the following image shows the first four entries to a filtered list based on *Azure DevOps*. To learn more, see [Change project-level permissions](../../security/change-project-level-permissions.md) or 
+To learn about the scopes available for your project or collection, go to the **Project Settings>Permissions>Groups** or **Collection Settings>Permissions>Groups** page. Filter the list as needed. For example, the following image shows the first four entries to a filtered list based on *Azure DevOps*. For more information, see [Change project-level permissions](../../security/change-project-level-permissions.md) or 
 [Change project collection-level permissions](../../security/change-organization-collection-level-permissions.md). 
 
 :::image type="content" source="media/rules/permissions-group-scope.png" alt-text="Screenshot of filtered Permissions groups list.":::
@@ -1008,8 +1008,8 @@ To learn more about default security groups, see [Permissions and groups](../../
 
 Rules that specify a condition based on the user or group membership of the user modifying a work item are evaluated in one of two ways. When the rule is evaluated, the application needs to determine whether the rule applies to the current user by checking if that user is or isn't a member of the specified group. 
  
-- When modifying the work item from the web portal, REST API, or **azure boards** command, a request to the Azure Active Directory or Active Directory is made. No problems occur for this operation.  
-- When modifying the work item from Visual Studio, Team Explorer Everywhere, Excel or other custom tool using the WIT Client Object Model, the request to evaluate membership is based on a client cache. The client cache is not aware of Active Directory groups. 
+- When modifying the work item from the web portal, REST API, or **azure boards** command, a request to the Microsoft Entra ID or Active Directory is made. No problems occur for this operation.  
+- When modifying the work item from Visual Studio, Excel or other custom tool using the WIT Client Object Model, the request to evaluate membership is based on a client cache. The client cache is not aware of Active Directory groups. 
 
 > [!NOTE] 
 > Visual Studio 2019 Team Explorer for projects using GIT has been re-written to use REST APIs.
@@ -1037,7 +1037,7 @@ This section describes the expected behavior and interactions when you apply con
 
 The following steps show, in the correct sequence, the interactions that Azure DevOps performs and by the user of a work-item form. Only steps 1, 8, and 13 are performed by the user.
 
-1.  From an Azure DevOps client&mdash;such as the web portal, Visual Studio/Team Explorer, or Team Explorer Everywhere&mdash;a user creates a new work item or edits an existing work item.
+1.  From an Azure DevOps client--such as the web portal or Visual Studio Team Explorer--a user creates a new work item or edits an existing work item.
 
 2.  Fill in field defaults. For all fields, apply any defaults assigned to the field that aren't part of a conditional clause.
 
@@ -1071,7 +1071,7 @@ The following steps show, in the correct sequence, the interactions that Azure D
 
 Rules are typically processed in the sequence in which they are listed. However, when you use the **WHEN**, **DEFAULT**, and **COPY** elements, additional behaviors may apply. The following steps show, in the correct sequence, the interactions that Azure DevOps performs and by the user of a work-item form. Only steps 1, 8, and 13 are performed by the user.
 
-1.  From an Azure DevOps client&mdash;such as the web portal, Visual Studio/Team Explorer, or Team Explorer Everywhere&mdash;a user creates a new work item or edits an existing work item.
+1.  From an Azure DevOps client--such as the web portal or Visual Studio Team Explorer--a user creates a new work item or edits an existing work item.
 
 2.  Fill in field defaults. For all fields, apply any **DEFAULT** rules specified outside or **WHEN** rules.
 
@@ -1131,9 +1131,9 @@ In the following XML example, the system empties MyCorp.SubStatus  as you type "
 	- [Add a custom rule to a work item type](custom-rules.md)
 	- [Apply rules to workflow states](apply-rules-to-workflow-states.md)
 - **On-premises XML process**  
-	- [Define a default value or copy a value to a field](../../../reference/xml/define-default-copy-value-field.md)
-	- [Define pick lists](../../../reference/xml/define-pick-lists.md)
-	- [Assign conditional-based values and rules](../../../reference/xml/assign-conditional-based-values-and-rules.md)
+	- [Define a default value or copy a value to a field](/previous-versions/azure/devops/reference/xml/define-default-copy-value-field)
+	- [Define pick lists](/previous-versions/azure/devops/reference/xml/define-pick-lists)
+	- [Assign conditional-based values and rules](/previous-versions/azure/devops/reference/xml/assign-conditional-based-values-and-rules)
 
  
 <!--- what On-premises rules aren't supported for Inherited? --> 

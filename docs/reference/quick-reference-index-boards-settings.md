@@ -2,14 +2,13 @@
 title: Quick reference index to Azure Boards settings 
 titleSuffix: Azure Boards
 description: Index to concepts and tasks for configuring and customizing Azure Boards.
-ms.custom: quick-reference-index
+ms.custom: quick-reference-index, engagement-fy23
 ms.service: azure-devops-boards
-ms.assetid:
 ms.topic: reference
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 monikerRange: '<= azure-devops'
-ms.date: 04/04/2022
+ms.date: 01/17/2023 
 ---
 
 # Quick reference index for Azure Boards settings 
@@ -18,7 +17,7 @@ ms.date: 04/04/2022
 
 Use this index to quickly access concepts and tasks related to configuring and customizing Azure Boards. If you're new to the Azure Boards, see [What is Azure Boards?](../boards/get-started/what-is-azure-boards.md). 
 
-<a id="concepts" />
+<a id="concepts"></a>
 
 ## Get started  
 
@@ -35,18 +34,7 @@ You can start using Azure Boards without configuring or customizing anything. Ho
 - [Set process permissions](../organizations/security/set-permissions-access-work-tracking.md#process-permissions)  
 ::: moniker-end
 
-::: moniker range="< azure-devops-2019"
-
-You can start using Azure Boards without configuring or customizing anything. However, as your organization grows, you'll find it beneficial to add teams, define area paths and iteration paths. If you are tasked with administrating a project for several teams, we recommend you review the following articles. 
-
-
-- [Customize work tracking overview](customize-work.md)
-- [Add a team](../organizations/settings/add-teams.md)
-- [Define Area Paths](../organizations/settings/set-area-paths.md?toc=/azure/devops/reference/toc.json&bc=/azure/devops/reference/breadcrumb/toc.json)  
-- [Define Iteration Paths](../organizations/settings/set-iteration-paths-sprints.md?toc=/azure/devops/reference/toc.json&bc=/azure/devops/reference/breadcrumb/toc.json)  
-- [Configure and customize Azure Boards](../boards/configure-customize.md?toc=/azure/devops/reference/toc.json&bc=/azure/devops/reference/breadcrumb/toc.json)  
-- [Set process permissions](../organizations/security/set-permissions-access-work-tracking.md#process-permissions)  
-::: moniker-end 
+ 
 
 ## Configure team tools 
 
@@ -59,15 +47,14 @@ Each team administrator can configure the following elements for their team, bac
       - [Define Area Paths for a team](../organizations/settings/set-area-paths.md)  
       - [Define Iteration Paths for a team](../organizations/settings/set-iteration-paths-sprints.md)  
       - [Define work item templates](../boards/backlogs/work-item-template.md)  
-      - [Backlogs](../organizations/settings/select-backlog-navigation-levels.md)  
-      - [Working days](../organizations/settings/set-working-days.md)  
+      - [Backlogs](../organizations/settings/select-backlog-navigation-levels.md)   
       - [Working with bugs](../organizations/settings/show-bugs-on-backlog.md)  
    :::column-end:::
    :::column span="1":::
-      **Kanban boards**
+      **Boards**
       - [Columns](../boards/boards/add-columns.md)  
       - [WIP limits](../boards/boards/wip-limits.md)    
-      - [Definition of Done](../boards/boards/definition-of-done.md)  
+      - [Definition of Done](../boards/boards/add-columns.md#definition-of-done)  
       - [Split columns](../boards/boards/split-columns.md)   
       - [Swimlanes](../boards/boards/expedite-work.md)  
       - [Card fields, styles, tag colors, annotations, and card reordering](../boards/boards/customize-cards.md#kanban-board)    
@@ -94,11 +81,7 @@ You customize Azure Boards work tracking using either the Inheritance process mo
 ::: moniker-end
 
 
-::: moniker range="< azure-devops-2019"
 
-You customize Azure Boards work tracking using the On-premises XML process model. This model requires editing XML definition files and uploading the modified files to the server.  
-
-::: moniker-end
 
 ::: moniker range=">= azure-devops-2019"
 
@@ -241,7 +224,7 @@ With the Hosted XML process model, you customize work tracking objects and Agile
       - [Change a field label](add-modify-field.md#change-label)  
       - [Add a custom control field](add-modify-field.md#custom-control)  
       - [Remove a field](add-modify-field.md#change-label)  
-      - [Define global lists](xml/define-global-lists.md)  
+      - [Define global lists](/previous-versions/azure/devops/reference/xml/define-global-lists)  
             
             
       **Work item types**
@@ -313,7 +296,7 @@ With the On-premises XML process model, you modify the XML definition of work it
       - [Set default bug management behavior](xml/process-configuration-xml-element.md#behaviors)  
       - [Set default hidden backlogs](xml/process-configuration-xml-element.md#behaviors)  
       - [Change process configuration](xml/process-configuration-xml-element.md)  
-      - [Add custom categories](xml/categories-xml-element-reference.md)  
+      - [Add custom categories](/previous-versions/azure/devops/reference/xml/categories-xml-element-reference)  
    :::column-end:::
 :::row-end:::
 ---

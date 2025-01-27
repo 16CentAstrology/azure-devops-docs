@@ -1,91 +1,69 @@
 ---
-title: Publish and consume packages from the CLI
-description: Publish and consume Python packages from the command-line interface
+title: Publish Python packages (CLI)
+description: Learn how to publish Python packages from the command-line interface.
 ms.service: azure-devops-artifacts
-ms.topic: quickstart
-ms.date: 03/10/2021
-monikerRange: '<= azure-devops'
+ms.topic: how-to
+ms.custom: engagement-fy23, devx-track-python
+ms.date: 01/15/2025
+monikerRange: '>= azure-devops-2019'
 "recommendations": "true"
 ---
 
-# Publish and consume Python packages from the command line
+# Publish Python packages (CLI)
 
-[!INCLUDE [version-lt-eq-azure-devops](../../includes/version-lt-eq-azure-devops.md)]
+[!INCLUDE [version-gt-eq-azure-devops-2019](../../includes/version-gt-eq-2019.md)]
 
-With Azure Artifacts, you can publish and consume packages from Azure Artifacts feeds as well as public registries such as pypi.org. Follow this quickstart to learn how to publish and consume Python packages using the command line.
+This article guides you through publishing Python packages to an Azure Artifacts feed using the NuGet command-line interface.
 
-## Publish Python packages
+## Prerequisites
 
-To publish a Python package to your feed, follow these steps:
+| **Product**        | **Requirements**                                                                                                                                                                                                                                                                                                                        |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Azure DevOps**   | - An Azure DevOps [organization](../../organizations/accounts/create-organization.md).<br>- An Azure DevOps [project](../../organizations/projects/create-project.md).<br> - Download and install [Python](https://www.python.org/downloads/). |
 
-1. Install the latest version of Azure Artifacts keyring
+## Create a feed
 
-    ```Command
-    pip install twine keyring artifacts-keyring
+[!INCLUDE [](../includes/create-feed.md)]
+
+## Publish packages
+ 
+1. Sign in to your Azure DevOps organization, and then navigate to your project.
+
+1. Select **Artifacts**, and then select **Connect to feed**.
+
+1. Select **twine** from the left navigation area. If this is your first time using Azure Artifacts with twine, make sure to install the prerequisites by selecting **Get the tools** and following the provided steps.
+
+1. Add a *pypirc* file to your home directory and paste the provided snippet into it. Your file should look similar to the following snippet. If you already have a *pypirc* that contains credentials for the public PyPI index, we recommend removing the *[pypi]* section to avoid accidentally publishing private packages to PyPI.
+
     ```
-
-1. Add a .pypirc configuration file to your home directory
-
-    ```Command
-    touch ~/.pypirc
-    ```
-
-1. Add the following content to your .pypirc file
-
-    ```Command
     [distutils]
     Index-servers =
-      <organizationName>
+    FEED_NAME
     
-    [<organizationName>]
-    Repository = https://pkgs.dev.azure.com/<organizationName>/_packaging/<feedName>/pypi/upload
+    [FEED_NAME]
+    Repository = https://pkgs.dev.azure.com/ORGANIZATION_NAME/PROJECT_NAME/_packaging/FEED_NAME/pypi/upload/
     ```
 
-1. Create a source and a wheel distributions
+1. Run the following command in your project directory to create source and wheel distributions.
 
-   ```Command
-   python setup.py sdist bdist_wheel
-   ```
-   
-1. Run the following command to publish your package
-
-   ```
-   twine upload -r <organizationName> dist/*
-   ```
-
-## Consume Python packages
-
-To install a Python package from the command line, follow these steps:
-
-1. Update your Python package installer
-
-    ```Command
-    python -m pip install --upgrade pip
+    ```
+    python setup.py sdist bdist_wheel
     ```
 
-1. Ensure you have the latest version of Azure Artifacts keyring
+1. Run the following command to publish your package. Use the `-r REPOSITORY_NAME` flag to ensure that your private packages are not accidentally published to PyPI.
 
-    ```Command
-    pip install twine keyring artifacts-keyring
+    ```
+    twine upload -r REPOSITORY_NAME dist/*
     ```
 
-1. [Create a virtual environment](https://docs.python.org/3/library/venv.html) if you don't have one already
+> [!IMPORTANT]
+> You must have twine 1.13.0 or higher to use **artifacts-keyring**. See [Usage requirements](https://github.com/microsoft/artifacts-keyring#requirements) for more details.
 
-1. Add a pip.ini (Windows) or pip.conf (Mac/Linux) configuration file to your virtual environment
+## Related content
 
-    ```Command
-    [global]
-    extra-index-url=https://pkgs.dev.azure.com/<organizationName>/_packaging/<feedName>/pypi/simple/
-    ```
+- [Install Python packages (CLI)](install-python-packages.md)
 
-1. Run the following command in your project directory to install your package
+- [Publish Python packages with Azure Pipelines (YAML/Classic)](../../pipelines/artifacts/pypi.md)
 
-   ```
-   pip install <package>
-   ```
+- [Use packages from PyPi.org](../python/use-packages-from-pypi.md)
 
-## Related articles
-
-- [Feeds permissions](../feeds/feed-permissions.md)
-- [Understand upstream sources](../concepts/upstream-sources.md)
-- [Publish Python packages with Azure Pipelines](../../pipelines/artifacts/pypi.md)

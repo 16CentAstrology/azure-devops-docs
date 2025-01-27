@@ -1,12 +1,12 @@
 ---
 ms.subservice: azure-devops-new-user
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: include
 ms.date: 04/04/2022
 ---
 
-<a id="share-vision" />
+<a id="share-vision"></a>
 
 
 ## Share your project vision, set up a project wiki 

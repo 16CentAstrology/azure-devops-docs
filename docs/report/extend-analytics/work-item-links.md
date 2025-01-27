@@ -5,8 +5,8 @@ description: Learn how to create a query for linked work items using Analytics f
 ms.subservice: azure-devops-analytics
 ms.topic: tutorial
 ms.assetid: BF30FE4E-0370-4C9B-A660-51207D816F8B
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 monikerRange: '>= azure-devops-2019'
 ms.date: 10/26/2022
 ---
@@ -30,7 +30,7 @@ In this article you'll learn:
 ::: moniker range=">= azure-devops-2019 < azure-devops"
 
 > [!NOTE]
-> The examples shown in this article are based on a Azure DevOps Services URL. For Azure DevOps Server, you need to substitute the URL for the on-premises server.
+> The examples shown in this article are based on an Azure DevOps Services URL. For Azure DevOps Server, you need to substitute the URL for the on-premises server.
 > 
 > [!div class="tabbedCodeSnippets"]
 > ```OData

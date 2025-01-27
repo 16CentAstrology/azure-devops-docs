@@ -1,11 +1,11 @@
 ---
 title: Run VSTest tests in parallel
-description: Continuous testing. Speed up testing by running tests in parallel using Visual Studio Test task. 
+description: Continuous testing. Speed up testing by running tests in parallel using Visual Studio Test task.
 ms.assetid: 8AEECA6C-6CC8-418C-AF75-6527E365FD88
-ms.topic: conceptual 
-ms.custom: "continuous-test, seodec18"
-ms.author: shashban
-author: shashban
+ms.topic: conceptual
+ms.custom: continuous-test
+ms.author: jeom
+author: raviLiftr
 ms.date: 11/13/2019
 monikerRange: '<= azure-devops'
 ---
@@ -27,11 +27,7 @@ This can be done easily by employing the additional capacity offered by the clou
 This article discusses how you can configure the
 [Visual Studio Test task](/azure/devops/pipelines/tasks/reference/vstest-v2) to run tests in parallel by using multiple agents.
 
-::: moniker range="tfs-2018"
 
-[!INCLUDE [temp](../includes/concept-rename-note.md)]
-
-::: moniker-end
 
 ## Pre-requisite
 
@@ -153,7 +149,7 @@ to validate the app functionality.
 > [!NOTE]
 > To use the multi-agent capability in release pipelines with on-premises TFS server, you must use TFS 2017 Update 1 or a later version.
 
-1. **Deploy app using a single agent**. Use the tasks shown in the image below to deploy a web app to Azure App Services.
+1. **Deploy app using a single agent**. Use the Azure Deployment: Create or Update Resource Group or the Azure App Service Deploy task to deploy a web app to Azure App services.
    This uses the default job settings (single agent, no parallel jobs).
 
    ![DeployApp1Agent](media/parallel-testing-vstest/deploy-app-1-agent.png)

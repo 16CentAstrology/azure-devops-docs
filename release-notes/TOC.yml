@@ -8,8 +8,87 @@
     items:
     - name: By release date 
       items:
+        - name: "2025"
+          items:
+          - name: January 17
+            href: 2025/sprint-248-update.md
+          expanded: true
+        - name: "2024"
+          items:
+          - name: November 13
+            href: 2024/sprint-247-update.md
+          - name: October 16
+            href: 2024/sprint-246-update.md
+          - name: September 26
+            href: 2024/sprint-245-update.md
+          - name: September 4
+            href: 2024/sprint-244-update.md
+          - name: August 13
+            href: 2024/sprint-243-update.md
+          - name: July 25
+            href: 2024/sprint-242-update.md
+          - name: July 3
+            href: 2024/sprint-241-update.md
+          - name: June 14
+            href: 2024/sprint-240-update.md
+          - name: May 2
+            href: 2024/sprint-238-update.md
+          - name: April 10
+            href: 2024/sprint-237-update.md
+          - name: March 26
+            href: 2024/sprint-236-update.md
+          - name: February 29
+            href: 2024/sprint-235-update.md
+          - name: February 9
+            href: 2024/sprint-234-update.md
+          - name: January 18
+            href: 2024/sprint-233-update.md
+          - name: January 11
+            href: 2024/sprint-232-update.md
+          expanded: false
+        - name: "2023"
+          items:
+          - name: December 5
+            href: 2023/sprint-231-update.md
+          - name: November 16
+            href: 2023/sprint-230-update.md
+          - name: October 26
+            href: 2023/sprint-229-update.md
+          - name: October 4
+            href: 2023/sprint-228-update.md
+          - name: September 14
+            href: 2023/sprint-227-update.md
+          - name: August 23
+            href: 2023/sprint-226-update.md
+          - name: August 2
+            href: 2023/sprint-225-update.md
+          - name: July 11
+            href: 2023/sprint-224-update.md
+          - name: June 21
+            href: 2023/sprint-223-update.md
+          - name: June 6
+            href: 2023/sprint-222-update.md
+          - name: May 9 
+            href: 2023/sprint-221-update.md
+          - name: April 20
+            href: 2023/sprint-220-update.md
+          - name: March 31
+            href: 2023/sprint-219-update.md
+          - name: March 8
+            href: 2023/sprint-218-update.md
+          - name: February 17
+            href: 2023/sprint-217-update.md
+          - name: February 7
+            href: 2023/sprint-216-update.md
+          - name: January 25
+            href: 2023/sprint-215-update.md
+          - name: January 12
+            href: 2023/sprint-214-update.md
+          expanded: false
         - name: "2022"
           items:
+          - name: December 8
+            href: 2022/sprint-213-update.md
           - name: November 2
             href: 2022/sprint-212-update.md
           - name: October 11
@@ -40,7 +119,7 @@
             href: 2022/sprint-199-update.md
           - name: January 19
             href: 2022/sprint-198-update.md
-          expanded: true
+          expanded: false
         - name: "2021"
           items:
           - name: December 6
@@ -195,8 +274,69 @@
       items:
       - name: Azure Boards
         items:
+        - name: "2025"
+          items:
+          - name: January 17
+            href: 2025/boards/sprint-248-update.md
+          expanded: false
+        - name: "2024"
+          items:
+          - name: November 13
+            href: 2024/boards/sprint-247-update.md
+          - name: October  16
+            href: 2024/boards/sprint-246-update.md
+          - name: September 26
+            href: 2024/boards/sprint-245-update.md
+          - name: September 4
+            href: 2024/boards/sprint-244-update.md
+          - name: July 25
+            href: 2024/boards/sprint-242-update.md
+          - name: June 14
+            href: 2024/boards/sprint-240-update.md
+          - name: April 10
+            href: 2024/boards/sprint-237-update.md
+          - name: February 29
+            href: 2024/boards/sprint-235-update.md
+          - name: February 9
+            href: 2024/boards/sprint-234-update.md
+          - name: January 18
+            href: 2024/boards/sprint-233-update.md
+          expanded: false
+        - name: "2023"
+          items:
+          - name: December 5
+            href: 2023/boards/sprint-231-update.md
+          - name: November 16
+            href: 2023/boards/sprint-230-update.md
+          - name: October 4
+            href: 2023/boards/sprint-228-update.md
+          - name: September 14
+            href: 2023/boards/sprint-227-update.md
+          - name: August 2
+            href: 2023/boards/sprint-225-update.md
+          - name: July 11
+            href: 2023/boards/sprint-224-update.md
+          - name: June 6
+            href: 2023/boards/sprint-222-update.md
+          - name: May 9
+            href: 2023/boards/sprint-221-update.md
+          - name: April 20
+            href: 2023/boards/sprint-220-update.md
+          - name: March 31
+            href: 2023/boards/sprint-219-update.md
+          - name: February 17
+            href: 2023/boards/sprint-217-update.md
+          - name: February 7
+            href: 2023/boards/sprint-216-update.md
+          - name: January 23
+            href: 2023/boards/sprint-215-update.md
+          - name: January 12
+            href: 2023/boards/sprint-214-update.md
+          expanded: false
         - name: "2022"
           items:
+          - name: December 8
+            href: 2022/boards/sprint-213-update.md
           - name: November 2
             href: 2022/boards/sprint-212-update.md
           - name: October 11
@@ -290,6 +430,37 @@
             href: 2019/boards/sprint-146-update.md
       - name: Azure Repos
         items:
+        - name: "2025"
+          items:
+          - name: January 17
+            href: 2025/repos/sprint-248-update.md
+          expanded: false
+        - name: "2024"
+          items:
+          - name: November 13
+            href: 2024/repos/sprint-247-update.md
+          - name: October 16
+            href: 2024/repos/sprint-246-update.md
+          - name: September 26
+            href: 2024/repos/sprint-245-update.md
+          - name: September 4
+            href: 2024/repos/sprint-244-update.md
+          - name: June 14
+            href: 2024/repos/sprint-240-update.md
+          - name: February 29
+            href: 2024/repos/sprint-235-update.md
+          - name: February 9
+            href: 2024/repos/sprint-234-update.md
+          expanded: false  
+        - name: "2023"
+          items:
+          - name: September 14
+            href: 2023/repos/sprint-227-update.md
+          - name: August 23
+            href: 2023/repos/sprint-226-update.md
+          - name: July 11
+            href: 2023/repos/sprint-224-update.md
+          expanded: false
         - name: "2021"
           items:
             - name: September 8
@@ -347,8 +518,85 @@
           expanded: false
       - name: Azure Pipelines
         items:
+        - name: "2025"
+          items:
+          - name: January 17
+            href: 2025/pipelines/sprint-248-update.md
+          expanded: false
+        - name: "2024"
+          items:
+          - name: November 13
+            href: 2024/pipelines/sprint-247-update.md
+          - name: October 16
+            href: 2024/pipelines/sprint-246-update.md
+          - name: September 26
+            href: 2024/pipelines/sprint-245-update.md
+          - name: September 4
+            href: 2024/pipelines/sprint-244-update.md
+          - name: August 13
+            href: 2024/pipelines/sprint-243-update.md
+          - name: July 25
+            href: 2024/pipelines/sprint-242-update.md
+          - name: July 3
+            href: 2024/pipelines/sprint-241-update.md
+          - name: June 14
+            href: 2024/pipelines/sprint-240-update.md
+          - name: May 2
+            href: 2024/pipelines/sprint-238-update.md
+          - name: April 10
+            href: 2024/pipelines/sprint-237-update.md
+          - name: March 26
+            href: 2024/pipelines/sprint-236-update.md
+          - name: February 29
+            href: 2024/pipelines/sprint-235-update.md
+          - name: February 9
+            href: 2024/pipelines/sprint-234-update.md
+          - name: January 18
+            href: 2024/pipelines/sprint-233-update.md
+          expanded: false
+        - name: "2023"
+          items:
+          - name: December 5
+            href: 2023/pipelines/sprint-231-update.md
+          - name: November 16
+            href: 2023/pipelines/sprint-230-update.md
+          - name: October 26
+            href: 2023/pipelines/sprint-229-update.md
+          - name: October 4
+            href: 2023/pipelines/sprint-228-update.md
+          - name: September 14
+            href: 2023/pipelines/sprint-227-update.md
+          - name: August 23
+            href: 2023/pipelines/sprint-226-update.md
+          - name: August 2
+            href: 2023/pipelines/sprint-225-update.md
+          - name: July 11
+            href: 2023/pipelines/sprint-224-update.md
+          - name: June 21
+            href: 2023/pipelines/sprint-223-update.md
+          - name: June 6
+            href: 2023/pipelines/sprint-222-update.md
+          - name: May 9
+            href: 2023/pipelines/sprint-221-update.md
+          - name: April 20
+            href: 2023/pipelines/sprint-220-update.md
+          - name: March 31
+            href: 2023/pipelines/sprint-219-update.md
+          - name: March 8
+            href: 2023/pipelines/sprint-218-update.md
+          - name: February 17
+            href: 2023/pipelines/sprint-217-update.md
+          - name: February 7
+            href: 2023/pipelines/sprint-216-update.md
+          - name: January 23
+            href: 2023/pipelines/sprint-215-update.md
+          - name: January 12
+            href: 2023/pipelines/sprint-214-update.md
+          expanded: false
         - name: "2022"
           items:
+          - name: December 8
+            href: 2022/pipelines/sprint-213-update.md
           - name: November 2
             href: 2022/pipelines/sprint-212-update.md
           - name: October 11
@@ -488,6 +736,24 @@
         expanded: false
       - name: Azure Test Plans
         items:
+        - name: "2025"
+          items:
+          - name: January 17
+            href: 2025/testplans/sprint-248-update.md
+          expanded: false
+        - name: "2024"
+          items:
+          - name: November 13
+            href: 2024/testplans/sprint-247-update.md
+          - name: September 26
+            href: 2024/testplans/sprint-245-update.md
+          - name: June 14
+            href: 2024/testplans/sprint-240-update.md
+          - name: February 29
+            href: 2024/testplans/sprint-235-update.md
+          - name: January 11
+            href: 2024/testplans/sprint-232-update.md
+          expanded: false
         - name: "2020"
           items:
           - name: November 12
@@ -507,6 +773,20 @@
         expanded: false
       - name: Azure Artifacts
         items:
+        - name: "2024"
+          items:
+          - name: October 16
+            href: 2024/artifacts/sprint-246-update.md
+          - name: February 9
+            href: 2024/artifacts/sprint-234-update.md
+          expanded: false
+        - name: "2023"
+          items:
+          - name: October 26
+            href: 2023/artifacts/sprint-229-update.md
+          - name: August 23
+            href: 2023/artifacts/sprint-226-update.md
+          expanded: false
         - name: "2022"
           items:
           - name: October 4
@@ -564,8 +844,92 @@
             href: 2019/artifacts/sprint-146-update.md
           expanded: false
         expanded: false
+      - name: GitHub Advanced Security for Azure DevOps
+        items:
+        - name: "2025"
+          items:
+          - name: January 17
+            href: 2025/ghazdo/sprint-248-update.md
+          expanded: false
+        - name: "2024"
+          items:
+          - name: November 13
+            href: 2024/ghazdo/sprint-247-update.md
+          - name: October 15
+            href: 2024/ghazdo/sprint-246-update.md
+          - name: September 26
+            href: 2024/ghazdo/sprint-245-update.md
+          - name: September 4
+            href: 2024/ghazdo/sprint-244-update.md
+          - name: August 13
+            href: 2024/ghazdo/sprint-243-update.md
+          - name: July 3
+            href: 2024/ghazdo/sprint-241-update.md
+          - name: June 14
+            href: 2024/ghazdo/sprint-240-update.md
+          - name: May 2
+            href: 2024/ghazdo/sprint-238-update.md
+          - name: April 10
+            href: 2024/ghazdo/sprint-237-update.md
+          - name: February 9
+            href: 2024/ghazdo/sprint-234-update.md
+          - name: January 18
+            href: 2024/ghazdo/sprint-233-update.md
+          expanded: false
+        - name: "2023"
+          items:
+          - name: October 26
+            href: 2023/ghazdo/sprint-229-update.md
+          - name: October 4
+            href: 2023/ghazdo/sprint-228-update.md
+          - name: July 11
+            href: 2023/ghazdo/sprint-224-update.md
+          - name: June 6
+            href: 2023/ghazdo/sprint-222-update.md
+          expanded: false
       - name: General
         items:
+        - name: "2025"
+          items:
+          expanded: true  
+        - name: "2024"
+          items:
+          - name: October 16
+            href: 2024/general/sprint-246-update.md 
+          - name: July 3
+            href: 2024/general/sprint-241-update.md 
+          - name: May 2
+            href: 2024/general/sprint-238-update.md
+          - name: March 26
+            href: 2024/general/sprint-236-update.md
+          - name: February 9
+            href: 2024/general/sprint-234-update.md
+          - name: January 18
+            href: 2024/general/sprint-233-update.md
+          - name: January 11
+            href: 2024/general/sprint-232-update.md
+          expanded: false  
+        - name: "2023"
+          items:
+          - name: November 16
+            href: 2023/general/sprint-230-update.md
+          - name: October 26
+            href: 2023/general/sprint-229-update.md
+          - name: October 4
+            href: 2023/general/sprint-228-update.md
+          - name: August 23
+            href: 2023/general/sprint-226-update.md
+          - name: June 21
+            href: 2023/general/sprint-223-update.md
+          - name: June 6
+            href: 2023/general/sprint-222-update.md
+          - name: March 31
+            href: 2023/general/sprint-219-update.md
+          - name: February 17
+            href: 2023/general/sprint-217-update.md
+          - name: January 12
+            href: 2023/general/sprint-214-update.md
+          expanded: false  
         - name: "2022"
           items:
           - name: October 11
@@ -647,10 +1011,38 @@
         expanded: false
       - name: Reporting
         items:
+        - name: "2025"
+          items:
+          expanded: true 
+        - name: "2024"
+          items:
+        - name: September 4
+          href: 2024/reporting/sprint-244-update.md
+          expanded: false 
+        - name: "2023"
+          items:
+          - name: November 16
+            href: 2023/reporting/sprint-230-update.md
+          - name: October 26
+            href: 2023/reporting/sprint-229-update.md
+          - name: June 21
+            href: 2023/reporting/sprint-223-update.md
+          - name: May 9
+            href: 2023/reporting/sprint-221-update.md
+          - name: April 20
+            href: 2023/reporting/sprint-220-update.md
+          - name: March 8
+            href: 2023/reporting/sprint-218-update.md
+          - name: February 17
+            href: 2023/reporting/sprint-217-update.md
+          - name: February 7
+            href: 2023/reporting/sprint-216-update.md
+          expanded: false   
         - name: "2022"
           items:
           - name: October 11
             href: 2022/reporting/sprint-211-update.md
+          expanded: false  
         - name: "2021"
           items:
           - name: November 16
@@ -682,6 +1074,19 @@
         expanded: false
       - name: Wiki
         items:
+        - name: "2025"
+          items:
+          expanded: false
+        - name: "2024"
+          items:
+          - name: October 16
+            href: 2024/wiki/sprint-246-update.md
+          expanded: false
+        - name: "2023"
+          items:
+          - name: January 23
+            href: 2023/wiki/sprint-215-update.md
+          expanded: false
         - name: "2022"
           items:
           - name: February 28
@@ -716,14 +1121,4 @@
   - name: Azure DevOps Server
     href: /azure/devops/server/release-notes/azuredevops2020
 - name: Documentation updates
-  items:
-  - name: What's new
-    href: docswhatsnew/index.yml
-  - name: October 2022
-    href: docswhatsnew/azure-devops-docs-whats-new.md
-  - name: September 2022
-    href: docswhatsnew/azure-devops-docs-2022-09.md
-  - name: August 2022
-    href: docswhatsnew/azure-devops-docs-2022-08.md
-- name: Subscribe to updates
-  href: https://azure.microsoft.com/updates/?product=azure-devops
+  href: ./docswhatsnew/toc.yml

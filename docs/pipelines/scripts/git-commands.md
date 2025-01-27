@@ -1,10 +1,9 @@
 ---
 title: Run Git commands in a script
-ms.custom: seodec18
 description: Learn how you can run a Git command in a build script for your workflow with Azure Pipelines
 ms.topic: conceptual
 ms.assetid: B5481254-F39C-4F1C-BE98-44DC0A95F2AD
-ms.date: 02/28/2022
+ms.date: 07/03/2023
 monikerRange: '<= azure-devops'
 ---
 
@@ -12,9 +11,7 @@ monikerRange: '<= azure-devops'
 
 [!INCLUDE [version-lt-eq-azure-devops](../../includes/version-lt-eq-azure-devops.md)]
 
-::: moniker range="tfs-2018"
-[!INCLUDE [temp](../includes/concept-rename-note.md)]
-::: moniker-end
+
 
 For some workflows, you need your build pipeline to run Git commands. For example, after a CI build on a feature branch is done, the team might want to merge the branch to main.
 
@@ -53,7 +50,7 @@ Git is available on [Microsoft-hosted agents](../agents/hosted.md) and on [on-pr
 
     :::image type="content" source="media/modify-repo-security.png" alt-text="Choose Security to edit your repository security. ":::
 
-1. Search for **Project Collection Build Service**. Choose the identity **Project Collection Build Service ({your organization})** (not the group **Project Collection Build Service Accounts ({your organization})**). By default, this identity can read from the repo but can’t push any changes back to it. Grant permissions needed for the Git commands you want to run. Typically you'll want to grant:
+1. Search for **Project Collection Build Service**. Choose the identity **{{your project name}} Build Service ({your organization})** (not the group **Project Collection Build Service Accounts ({your organization})**). By default, this identity can read from the repo but can’t push any changes back to it. Grant permissions needed for the Git commands you want to run. Typically you'll want to grant:
 
       * **Create branch:**  Allow
       * **Contribute:**  Allow
@@ -63,35 +60,29 @@ Git is available on [Microsoft-hosted agents](../agents/hosted.md) and on [on-pr
 
 ::: moniker-end
 
-::: moniker range="<= azure-devops-2019"
+::: moniker range="=azure-devops-2019"
 
 Go to the Version Control control panel tab
 
-<ul>
-<li>Azure Repos: <code>https:&#x2F;&#x2F;dev.azure.com/{your-organization}/{your-project}/_admin/_versioncontrol</code></li>
 
-<li>On-premises: <code>https:&#x2F;&#x2F;{your-server}:8080/tfs/DefaultCollection/{your-project}/_admin/_versioncontrol</code></li>
-</ul>
+- Azure Repos: `https:&#x2F;&#x2F;dev.azure.com/{your-organization}/{your-project}/_admin/_versioncontrol`
 
-<p>
+- On-premises: `https:&#x2F;&#x2F;{your-server}:8080/tfs/DefaultCollection/{your-project}/_admin/_versioncontrol`
 
 ![manage project](media/manage-project.png)
 
-</p>
 
-<p>If you see this page, select the repo, and then select the link:</p>
+If you see this page, select the repo, and then select the link:
 
-<p>
+
 
 ![control panel top to project](media/control-panel-top-to-team-project.png)
 
-</p>
 
-<p>
 
 ![control panel project version control tab](media/control-panel-team-project-version-control-tab.png)
 
-</p>
+
 
 On the **Version Control** tab, select the repository in which you want to run Git commands, and then select **Project Collection Build Service**. By default, this identity can read from the repo but can’t push any changes back to it.
 
@@ -181,7 +172,7 @@ steps:
 
 ### List the files in your repo
 
-On the [build tab](../tasks/index.md) add this task:
+On the [build tab](../tasks/index.md), add this task:
 
 | Task | Arguments |
 | ---- | --------- |
@@ -244,7 +235,7 @@ Yes
 
 ### How do I avoid triggering a CI build when the script pushes?
 
-::: moniker range="<= azure-devops-2019"
+::: moniker range="=azure-devops-2019"
 
 Add ```***NO_CI***``` to your commit message. Here are examples:
 * ```git commit -m "This is a commit message ***NO_CI***"```
@@ -258,7 +249,7 @@ Add `[skip ci]` to your commit message or description. Here are examples:
 * ```git commit -m "This is a commit message [skip ci]"```
 * ```git merge origin/features/hello-world -m "Merge to main [skip ci]"```
 
-You can also use any of the variations below. This is supported for commits to Azure Repos Git, Bitbucket Cloud, GitHub, and GitHub Enterprise Server.
+You can also use any of these variations for commits to Azure Repos Git, Bitbucket Cloud, GitHub, and GitHub Enterprise Server.
 
 - `[skip ci]` or `[ci skip]`
 - `skip-checks: true` or `skip-checks:true`

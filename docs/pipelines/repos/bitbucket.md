@@ -4,7 +4,7 @@ description: Using a Bitbucket Cloud repository with Azure Pipelines
 ms.topic: reference
 ms.author: vijayma
 author: vijayma
-ms.date: 05/31/2022
+ms.date: 10/27/2023
 monikerRange: azure-devops
 ---
 
@@ -70,6 +70,9 @@ Continuous integration (CI) triggers cause a pipeline to run whenever you push a
 
 # [Classic](#tab/classic/)
 
+> [!NOTE]
+> The **Build.SourceVersionMessage** variable does not work with Bitbucket repositories when **Batch changes while a build is in progress** is enabled.  
+
 [!INCLUDE [ci-triggers](includes/ci-triggers4.md)]
 
 ![ci trigger git branches](media/ci-trigger-git-branches-neweditor.png)
@@ -104,7 +107,7 @@ target `master` and `releases/*`, you can use the following `pr` trigger.
 
 ```yaml
 pr:
-- master
+- main
 - releases/*
 ```
 
@@ -141,7 +144,7 @@ For more complex triggers that need to exclude certain branches, you must use th
 pr:
   branches:
     include:
-    - master
+    - main
     - releases/*
     exclude:
     - releases/old*
@@ -156,7 +159,7 @@ You can specify file paths to include or exclude. For example:
 pr:
   branches:
     include:
-    - master
+    - main
     - releases/*
   paths:
     include:
@@ -184,7 +187,7 @@ pr:
   autoCancel: false
   branches:
     include:
-    - master
+    - main
 ```
 
 ### Opting out of PR validation
@@ -199,7 +202,7 @@ pr: none
 For more information, see [PR trigger](/azure/devops/pipelines/yaml-schema/pr) in the [YAML schema](/azure/devops/pipelines/yaml-schema).
 
 > [!NOTE]
-> If your `pr` trigger isn't firing, ensure that you have not [overridden YAML PR triggers in the UI](../troubleshooting/troubleshooting.md#overridden-yaml-trigger-setting).
+> If your `pr` trigger isn't firing, ensure that you have not [overridden YAML PR triggers in the UI](../troubleshooting/troubleshoot-triggers.md#overridden-yaml-trigger-setting).
 
 # [Classic](#tab/classic/)
 
@@ -215,6 +218,10 @@ For included branches, a build will be triggered on each push to a pull request 
 [!INCLUDE [informational-runs](../includes/information-run-include.md)]
 
 Learn more about [informational runs](../process/information-run.md).
+
+## Limitations
+
+[!INCLUDE [bb-limitations](./includes/bb-limitations.md)]
 
 ## FAQ
 

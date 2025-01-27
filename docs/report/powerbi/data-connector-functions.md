@@ -5,8 +5,8 @@ description: Learn about the available functions that the Power BI Data Connecto
 ms.assetid: EC735BA2-24C9-4BA3-B35E-2CE9D2F1D7F1
 ms.subservice: azure-devops-analytics
 ms.topic: conceptual 
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 monikerRange: '>= azure-devops-2019'
 ms date: 10/04/2021
 ---
@@ -55,7 +55,7 @@ If you're already using `Web.Contents` to access work tracking data from Analyti
 > |`Timeout`|Specify this value as a duration will change the timeout for an HTTP request. The default value is 600 seconds.|
 > |`Version`|Version of the data model. This option is primary for diagnostics.|
 
-<a id="supported-subdomains" /> 
+<a id="supported-subdomains"></a> 
 
 ## Supported Subdomains for VSTS.AccountContents 
 

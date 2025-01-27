@@ -1,16 +1,14 @@
 {
-    "$schema": "https://whatsnewapi.azurewebsites.net/schema",
+    "$schema": "https://github.com/dotnet/docs-tools/blob/main/WhatsNew.Infrastructure/Configuration/reposettings.schema.json",
     "docSetProductName": "Azure DevOps",
     "rootDirectory": "docs/",
     "docLinkSettings": {
-      "linkFormat": "relative",
+      "linkFormat": "siteRelative",
       "relativeLinkPrefix": "/azure/devops/"
     },
     "inclusionCriteria": {
-      "additionalMicrosoftOrgs": [
-        "GitHub"
-      ],
-      "minAdditionsToFile": 62
+      "minAdditionsToFile": 10,
+      "omitPullRequestTitles": true
     },
     "areas": [
       {
@@ -80,6 +78,10 @@
       {
         "names": ["pipelines"],
         "heading": "Azure Pipelines"
+      },
+      {
+        "names": ["managed-devops-pools"],
+        "heading": "Managed DevOps Pools"
       },
       {
         "names": ["project"],

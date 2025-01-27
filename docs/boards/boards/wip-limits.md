@@ -1,155 +1,145 @@
 ---
-title: Configure WIP limits for Kanban board
+title: Configure WIP limits
 titleSuffix: Azure Boards
-description: Learn how to set Work In Progress Limits on the Kanban board in Azure Boards.
+description: Learn how to set Work In Progress Limits on a board in Azure Boards.
 ms.custom: boards-kanban 
 ms.service: azure-devops-boards
 ms.assetid: d18351c1-e9e1-4c16-869d-e15ca478c748
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: how-to
 monikerRange: '<= azure-devops'
-ms.date: 04/01/2022
+ms.date: 06/07/2024
 ---
 
 
-# Set Work in Progress limits in Azure Boards
+# Set Work in Progress limits
 
 [!INCLUDE [version-lt-eq-azure-devops](../../includes/version-lt-eq-azure-devops.md)]
 
-An essential Kanban practice&mdash;Work in Progress limits, referred to as "WIP limits"&mdash;constrains the amount of work your team undertakes at each work stage. It's designed to focus your team on completing items before starting new work. While counter-intuitive at first, many teams find WIP limits helps them increase their productivity and improve their software quality.  
+Work-in-Progress (WIP) limits, a crucial [Kanban](kanban-overview.md) practice, restrict the work your team takes on at each stage. By emphasizing completion before starting new work, teams often experience increased productivity and improved software quality.  
 
-You define WIP limits for each work stage, corresponding to each intermediate column. The limit sets a soft constraint on the number of items allowed within the column. Nothing actually prevents you from moving more items into the column and exceeding the limit. Your Kanban board shows the count of items at each stage next to each limit.
+Setting WIP limits for each stage adds soft constraints on the number of items allowed in the corresponding columns. Exceeding these limits is possible, but your board displays item counts next to each limit. Use this article as a guide for setting and implementing WIP limits.
 
-<img src="media/WIP_1.png" alt="Kanban board columns with WIP limits" /> 
-
-While [setting WIP limits](#Set) is simple, adhering to the limits takes a team commitment. Successful adoption of WIP limits involves a culture change. It moves teams from a focus on individual productivity to one of team productivity. 
+## Prerequisites
 
 [!INCLUDE [temp](../includes/prerequisites-team-settings.md)]
 
-<a id="Initial WIP" />
+<a id="Initial WIP"></a>
 
 ## Determine initial WIP limits
 
-To get started, have your team determine the initial WIP limits to set and how they'll use and monitor them. Beyond that, few rules apply to what numbers to set as they can vary based on several factors. Here are two guidelines to help you determine what limits to set:
+Do the following actions to determine initial WIP limits.
 
-* Set limits based on current works in progress. Count the items present in your existing Kanban columns.
+* **Assess current work:** Count the items present in your existing columns to set initial WIP limits.
+* **Set team-based limits:** Set limits that don't exceed two or three items per team member working within a stage. For instance, with three team members, the WIP limit is six, three developers X two tasks/developer.
+* **Start low:** Begin with low limits to identify bottlenecks and address process issues promptly.
 
-* Set limits that don't exceed two or three items per team member that works within a stage. For example, if you have three team members and each team member can work on no more than two tasks at a time, the resulting WIP limit is 6 (= 3 developers X 2 tasks/developer).
-
-Starting low may help your team discover bottlenecks more quickly and identify process issues to address.
-
-After you've defined an initial set of WIP limits, you'll likely want to fine tune them as your project progresses.
-
-If you're new to Kanban, review [Kanban basics](kanban-basics.md) to get an overview of how to access your board and implement Kanban.
-
-
-<a id="Keep within WIP" />
+<a id="Keep within WIP"></a>
 
 ## Keep within WIP limits
 
-After you've set your WIP limits, you'll want to track how well your team keeps within the limits. 
+After you set your WIP limits, track how well your team keeps within the limits. 
 
-Respecting WIP limits means teams don't pull items into a column if doing so causes the number of items in the column to exceed the column limit. When they do, your Kanban board provides immediate feedback. This feedback should act as a signal to the team to focus immediately on activities to reduce the number of items in the column.
+Respecting WIP limits means teams don't pull items into a column if doing so causes the number of items in the column to exceed the column limit. When they do, your board provides immediate feedback. This feedback should act as a signal to the team to focus immediately on activities to reduce the number of items in the column.
 
-<img src="media/WIP_2.png" alt="Kanban board showing a column over the WIP limit" /> 
+:::image type="content" source="media/WIP_2.png" alt-text="Example image of a board showing a column over the WIP limit.":::
 
 Although simple in theory, keeping within WIP limits can force individuals, teams, and organizations out of their comfort zone. Team members who like to multitask might feel constrained. Others might find themselves without work as they wait for work to complete at an upstream stage. 
 
-To gain the advantages of constraining work-in-progress, have your team meet frequently to discuss the process changes taking place. As a starting point, consider hosting discussions around some of the [challenges and solutions to support successful implementation of WIP limits](best-practices-kanban.md#practices) provided below.
+To gain the advantages of constraining work-in-progress, have your team meet frequently to discuss the process changes taking place.
 
-
-<a id="Keep within WIP" />
+<a id="Keep within WIP"></a>
 
 ## Identify bottlenecks
 
 To optimize the flow of value, you naturally want to identify and eliminate bottlenecks. Bottlenecks indicate waste exists in the overall workflow process. 
 
-By monitoring your Kanban board over time, you can learn where bottlenecks occur. When several items sit in a column unworked for several days, a bottleneck has occurred. Bottlenecks typically occur when WIP limits are too high. However, no bottlenecks could indicate that WIP limits are too low. 
+By monitoring your board over time, you can learn where bottlenecks occur. When several items sit in a column unworked for several days, a bottleneck occurred. Bottlenecks typically occur when WIP limits are too high. However, no bottlenecks could indicate that WIP limits are too low.
 
-The free eBook, [Kanban and Scrum - making the most of both](https://www.infoq.com/minibooks/kanban-scrum-minibook), provides this guidance:
+Taking periodic snapshots of your board can visually catalog where work flows smoothly and where bottlenecks appear.
 
-*Too low WIP limit => idle people => bad productivity*
-*Too high WIP limit => idle tasks => bad lead time* 
+:::image type="content" source="media/WIP_3.png" alt-text="Screenshot of example snapshots.":::
 
-Taking periodic snapshots of your Kanban board can visually catalog where work flows smoothly and where bottlenecks appear.
+Such snapshots can show your team the following information:
 
-![Snapshots](media/WIP_3.png)
+* Average number of items within a workflow stage or column  
+* The ratio of items being worked on to the number of team members within a workflow stage or column 
+* Number of items that stayed in a workflow stage or column for extended durations
+* Number of completed items and average throughput rate over a specific time period
 
-Such snapshots can show your team:
-
-* How many items on average exist within a workflow stage/column  
-* How many items are being worked versus team members who work within a workflow stage/column  
-* How many and which items remained in a workflow stage/column for long periods of time  
-* How many items did the team complete at the end of a one, two, or three week period?  
-
-<a id="Eliminate waste" />
+<a id="Eliminate waste"></a>
 
 ## Eliminate waste
 
-Because bottlenecks signal waste in your workflow process, you'll want to identify the source of the waste. Kanban defines waste as anything not strictly needed to produce desired outcomes.
-
-Common wastes in software development include:
+To address bottlenecks in your workflow process, it’s essential to identify the sources of waste. Waste refers to anything not strictly necessary for achieving desired outcomes. In software development, common forms of waste include:
 
 * Unused code or features
-* Defects that lead to rework
-* Delays or time spent waiting for something
-* Handoffs from one person, team, or business process to another
+* Defects requiring rework
+* Delays or waiting time
+* Handoffs between teams or processes
 * Insufficient requirements
-* Slow or poor communication
+* Inefficient communication
 
-Eliminating waste calls for team discussions to identify causes and solutions acceptable to the team. Along with addressing the [challenges and solutions posed by WIP limits](best-practices-kanban.md#practices), the team may decide to adjust their workflow process or WIP limits. 
+To eliminate waste, engage in team discussions to identify causes and collaboratively find acceptable solutions.
 
-
-<a id="Set" />
+<a id="Set"></a>
 
 ## Set WIP limits
 
-With an understanding of how you'll use WIP limits, here's how you set them. If you haven't yet [mapped your team's work flow to Kanban columns](add-columns.md), do that first. For information about accessing your Kanban board, see [Kanban basics](kanban-basics.md). 
+With an understanding of how you want to use WIP limits, do the following steps to set them. Ensure you already [mapped your team's work flow to columns](add-columns.md). 
 
-::: moniker range=">= azure-devops-2019"
+1. [Open your board](kanban-quickstart.md).
 
-1. [Open your Kanban board](kanban-quickstart.md). If you're not a team admin, [get added as one](../../organizations/settings/add-team-administrator.md). Only team and project admins can customize the Kanban board.
+2. Select the :::image type="icon" source="../../media/icons/blue-gear.png" border="false":::  gear icon to configure the board and set general team settings.  
 
-1. Choose the  :::image type="icon" source="../../media/icons/blue-gear.png" border="false":::  gear icon to configure the board and set general team settings.  
+   :::image type="content" source="../../organizations/settings/media/configure-team/open-board-settings.png" alt-text="Screenshot showing Open board settings for a team, vertical navigation.":::
 
-	> [!div class="mx-imgBorder"]
-	> ![Open board settings for a team, vert nav](../../organizations/settings/media/configure-team/open-board-settings.png)  
+3. Choose **Columns** and then a column tab to set the WIP limit for that column. 
 
-2. Choose **Columns** and then a column tab to set the WIP limit for that column. 
-
-	![Kanban board, Customize columns, default columns, Agile process, set WIP limits](media/wip-columns-settings.png)  
+	:::image type="content" source="media/wip-columns-settings.png" alt-text="Screenshot showing board, Customize columns, default columns, Agile process, set WIP limits."::: 
 
 	> [!NOTE]   
-	> You'll see different column titles and choices based on the [process](../work-items/guidance/choose-process.md) used to create your project  and whether your team has chosen to [treat bugs like requirements or like tasks](../../organizations/settings/show-bugs-on-backlog.md).  
+	> Different column titles and choices are available based on the [process](../work-items/guidance/choose-process.md) that was used to create your project and whether your team has chosen to [treat bugs like requirements or like tasks](../../organizations/settings/show-bugs-on-backlog.md).  
 
-3. When done with your changes, choose **Save**.  
+4. When you're done, select **Save**.
 
-::: moniker-end 
+## WIP limits, challenges, and solutions
 
-::: moniker range="tfs-2018"
-1. [Open your Kanban board](kanban-quickstart.md). If you're not a team admin, [get added as one](../../organizations/settings/add-team-administrator.md). Only team and project admins can customize the Kanban board.
+Teams occasionally exceed WIP limits by one or two items. If you frequently exceed limits by three or more items, review processes or adjust the limits.
 
-1. Choose ![settings icon](../../media/icons/team-settings-gear-icon.png) to open the common configuration settings dialog for the Kanban board. 
+Your team should engage in discussions after several weeks of using WIP limits. Identify challenges, collaboratively decide on solutions, and adjust limits as needed. The following list isn't exhaustive, but covers common challenges teams and proven solutions. 
 
-	![Kanban board, open common configuration settings](media/add-columns-open-settings-ts.png)  
+### WIP challenges
 
-2. Choose **Columns** and then a column tab to set the WIP limit for that column. 
+* **Social dynamics:** Team members might struggle with following rules. Some rebel, others misunderstand applicability, and some take on extra work beyond agreed limits. Multitasking beliefs can also hinder adherence.
 
-	![Kanban board, Customize columns, default columns, Agile process, set WIP limits](media/wip-columns-settings.png)  
+* **Variability of work:** Uneven item sizes, for example, user stories and bugs, impact workflow. Varying estimates, like hours, days, and story points, require tailored WIP constraints.
 
-	> [!NOTE]   
-	> You'll see different column titles and choices based on the [process](../work-items/guidance/choose-process.md) used to create your project  and whether your team has chosen to [treat bugs like requirements or like tasks](../../organizations/settings/show-bugs-on-backlog.md).  
+* **Ignoring systemic issues:** Teams often persist through bottlenecks instead of tackling underlying workflow issues. 
 
-3. When done with your changes, choose **Save**.  
+* **Culture change:** Implementing WIP limits involves system, cultural, and team adjustments. 
 
-::: moniker-end
+### Solutions for managing WIP
+
+* **Build a culture of team productivity:** Address the tension between individual and team productivity. Encourage practices that enhance overall workflow efficiency. 
+
+* **Size work appropriately:** Discuss work size before starting tasks. Break down large items into smaller tasks.
+
+* **Prioritize high-value items:** When idle, focus on moving upstream items forward. Seek help when blocked or facing delivery challenges.
+
+* **Resource team allocation:** Ensure adequate specialists in each work stage to prevent bottlenecks.
+
+* **Build shared understanding:** Foster team understanding of [Kanban](kanban-overview.md) practices. Hold regular retrospectives and document policies.
+
+* **Make metrics-driven adjustments:** Monitor WIP and lead time metrics for process adjustments.
+
+* **Manage culture change:** Apply change management principles and promote team ownership during WIP limit implementation.
 
 ## Related articles
 
-
 - [Split columns](split-columns.md)  
 - [Speed up work](expedite-work.md)  
-- [Definition of Done](definition-of-done.md)  
+- [Add the Definition of Done to a column](add-columns.md#definition-of-done)  
 - [Customize cards](../../boards/boards/customize-cards.md)  
 - [Show bugs on backlogs and boards](../../organizations/settings/show-bugs-on-backlog.md)  

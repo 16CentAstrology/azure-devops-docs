@@ -4,8 +4,8 @@ titleSuffix: Azure DevOps
 description: Summary view of default Team Foundation Version Control (TFVC) repository permissions 
 ms.topic: reference
 ms.subservice: azure-devops-security
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.date: 04/14/2021
 monikerRange: '<= azure-devops'
 ---
@@ -20,8 +20,6 @@ All members of the Contributors group with Basic access can contribute to a TFVC
 [!INCLUDE [temp](includes/code-tfvc.md)]
 
 To change permissions for TFVC repositories or branches, see [Set TFVC repository permissions](../../repos/tfvc/set-tfvc-repository-permissions.md).
-
-[!INCLUDE [tip-search-settings](../../includes/tip-find-setting-permission.md)]
 
 ## Related articles
 
