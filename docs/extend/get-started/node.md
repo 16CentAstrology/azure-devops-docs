@@ -1,14 +1,14 @@
 ---
 ms.subservice: azure-devops-ecosystem
 title: Develop a web extension
-description: Tutorial showing you how to develop your first web extension for Azure DevOps.
+description: Learn how to develop your first web extension for Azure DevOps.
 ms.assetid: ae82118c-82fa-40ec-9f29-989ce981f566
 ms.custom: engagement-fy23
 ms.topic: how-to
 monikerRange: '<= azure-devops'
 ms.author: chcomley
 author: chcomley
-ms.date: 10/12/2022
+ms.date: 09/20/2023
 ---
 
 # Develop a web extension
@@ -22,11 +22,11 @@ Use extensions to enhance Azure DevOps with new web experiences, dashboard widge
 
 ## Prerequisites
 
-You must have the following permission and installations.
+Have the following permission and installations.
 
 * You must be an organization owner. If you don't have an organization, you can [create an organization for free](https://app.vsaex.visualstudio.com/profile/account).
 * Install [Node.js](https://nodejs.org).
-* Install the extension packaging tool (TFX). Run `npm install -g tfx-cli` from a command prompt, which you'll use to [package your extension](../publish/overview.md) later on.
+* Install the extension packaging tool (TFX). Run `npm install -g tfx-cli` from a command prompt, which you use to [package your extension](../publish/overview.md) later on.
 
 ## Create a directory and manifest
 
@@ -49,7 +49,7 @@ An extension is composed of a set of files that includes a required manifest fil
 3. Install the Microsoft VSS Web Extension SDK package and save it to your npm package manifest:
    
    ```
-   npm install vss-web-extension-sdk --save
+   npm install azure-devops-extension-sdk --save
    ```
 
    This SDK includes a JavaScript library that provides APIs required for communicating with the page your extension is embedded in.
@@ -90,7 +90,7 @@ An extension is composed of a set of files that includes a required manifest fil
                 "addressable": true
             },
             {
-                "path": "node_modules/vss-web-extension-sdk/lib",
+                "path": "node_modules/azure-devops-extension-sdk",
                 "addressable": true,
                 "packagePath": "lib"
             }
@@ -107,7 +107,27 @@ An extension is composed of a set of files that includes a required manifest fil
     <!DOCTYPE html>
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <script src="lib/VSS.SDK.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+        <script>
+            window.requirejs.config({
+                enforceDefine: true,
+                paths: {
+                    'SDK': './lib/SDK.min'
+                }
+            });
+            window.requirejs(['SDK'], function (SDK) {
+                if (typeof SDK !== 'undefined') {
+                    console.log("SDK is defined. Trying to initialize...");
+                    SDK.init();
+                    SDK.ready().then(() => {
+                        console.log("SDK is ready");
+                        document.getElementById("name").innerText = SDK.getUser().displayName;
+                    });
+                } else {
+                    console.log('SDK is not defined');
+                }
+            });
+        </script>
         <style>
             body {
                 background-color: rgb(0, 67, 117);
@@ -116,12 +136,6 @@ An extension is composed of a set of files that includes a required manifest fil
                 font-family: "Segoe UI VSS (Regular)","-apple-system",BlinkMacSystemFont,"Segoe UI",sans-serif;
             }
         </style>
-        <script type="text/javascript">
-            VSS.init();
-            VSS.ready(function() {
-                document.getElementById("name").innerText = VSS.getWebContext().user.name;
-            });
-        </script>
     </head>
     <body>        
         <h1>Hello, <span id="name"></span></h1>
@@ -135,7 +149,7 @@ An extension is composed of a set of files that includes a required manifest fil
     |-- my-hub.html
     |-- node_modules
         |-- @types
-        |-- vss-web-extension-sdk
+        |-- azure-devops-extension-sdk
     |-- package.json
     |-- vss-extension.json
     ```

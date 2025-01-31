@@ -4,8 +4,8 @@ titleSuffix: Azure DevOps Services
 description: Clone a Hosted XML process model to an inherited process in Azure DevOps Services
 ms.custom: inherited-process
 ms.service: azure-devops-boards
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: how-to
 monikerRange: 'azure-devops'
 ms.date: 05/30/2018
@@ -23,7 +23,7 @@ Before you clone a Hosted XML process, we recommend that you review [Supported o
 ## Prerequisites
 
 - Your account currently uses the Hosted XML process model 
-- You must be a member of the Project Collection Administrators group, the organization owner, or be granted explicit permissions to edit, create, or manage a specific process and to create a project. 
+- Be a member of the Project Collection Administrators group, the organization owner, or be granted explicit permissions to edit, create, or manage a specific process and to create a project. 
 
 
 ## Sequence of steps

@@ -13,7 +13,7 @@ ms.date: 08/07/2020
 
 ::: moniker-end
 
-::: moniker range="azure-devops-2020"
+::: moniker range=">= azure-devops-2020 < azure-devops"
 
 [!INCLUDE [agent-queues-tab](agent-queues-tab/agent-queues-tab-server-2020.md)]
 
@@ -25,9 +25,5 @@ ms.date: 08/07/2020
 
 ::: moniker-end
 
-::: moniker range="tfs-2018"
 
-[!INCLUDE [agent-queues-tab](agent-queues-tab/agent-queues-tab-tfs-2018.md)]
-
-::: moniker-end
 

@@ -1,179 +1,101 @@
 ---
-title: "Azure DevOps docs: What's new for October 1, 2022 - October 31, 2022"
-description: "What's new in the Azure DevOps docs for October 1, 2022 - October 31, 2022."
-ms.date: 11/03/2022
+title: "Azure DevOps docs: What's new for December 1, 2024 - December 31, 2024"
+description: "What's new in the Azure DevOps docs for December 1, 2024 - December 31, 2024."
+ms.date: 01/07/2025
 ---
 
-# Azure DevOps docs: What's new for October 1, 2022 - October 31, 2022
+# Azure DevOps docs: What's new for December 1, 2024 - December 31, 2024
 
-Welcome to what's new in the Azure DevOps docs from October 1, 2022 through October 31, 2022. This article lists some of the major changes to docs during this period.
+Welcome to what's new in the Azure DevOps docs from December 1, 2024 through December 31, 2024. This article lists some of the major changes to docs during this period.
+
+## Administration
+
+### Updated articles
+
+- [About teams and Agile tools](/azure/devops/organizations/settings/about-teams-and-settings)
+- [Security best practices](/azure/devops/organizations/security/security-best-practices)
+- [Set user preferences](/azure/devops/organizations/settings/set-your-preferences)
+- [Auditing events list](/azure/devops/organizations/audit/auditing-events)
+- [Manage personal access tokens (PATs) using REST API](/azure/devops/organizations/accounts/manage-personal-access-tokens-via-api)
+- [Use personal access tokens](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate)
+- [About security, authentication, and authorization](/azure/devops/organizations/security/about-security-identity)
 
 ## Artifacts
 
-### New articles
+### Updated articles
 
-- [Search for packages in upstream sources](/azure/devops/artifacts/how-to/search-upstream)
+- [Get started with Python packages in Azure Artifacts](/azure/devops/artifacts/quickstarts/python-packages)
+- [Install NuGet packages with Visual Studio](/azure/devops/artifacts/nuget/consume)
+
+## Azure DevOps Reporting and Analytics service
 
 ### Updated articles
 
-- [Project-scoped feeds](/azure/devops/artifacts/feeds/project-scoped-feeds)
+- [Configure and monitor sprint burndown](/azure/devops/report/dashboards/configure-sprint-burndown)
 
-## Boards
-
-### Updated articles
-
-- [Link user stories, issues, bugs, and other work items in Azure Boards](/azure/devops/boards/backlogs/add-link)
-- [Configure your backlog view in Azure Boards](/azure/devops/boards/backlogs/configure-your-backlog-view)
-- [Interactively filter backlogs, boards, queries, and plans in Azure Boards](/azure/devops/boards/backlogs/filter-backlogs-boards-plans)
-- [Organize your backlog and map child work items to parents in Azure Boards](/azure/devops/boards/backlogs/organize-backlog)
-- [Manage and organize queries in Azure Boards and Azure DevOps](/azure/devops/boards/queries/organize-queries)
-- [Use an index to query quick reference data in Azure Boards and Azure DevOps](/azure/devops/boards/queries/query-index-quick-ref)
-- [Define a work item query in Azure Boards](/azure/devops/boards/queries/using-queries)
-
-## Developer resources
-
-### Updated articles
-
-- [Contribution model](/azure/devops/extend/develop/contributions-overview)
-- [Extensions overview](/azure/devops/extend/overview)
-- [Package and publish extensions](/azure/devops/extend/publish/overview)
-- [Extensibility points](/azure/devops/extend/reference/targets/overview)
-
-## Marketplace
-
-### Updated articles
-
-- [Manage extension permissions](/azure/devops/marketplace/grant-permissions)
-- [Install extensions](/azure/devops/marketplace/install-extension)
-- [Marketplace extensions for Azure DevOps](/azure/devops/marketplace/overview)
-- [Uninstall or disable extensions for Azure DevOps](/azure/devops/marketplace/uninstall-disable-extensions)
-
-## Organizations
-
-### Updated articles
-
-- [Access via Azure AD FAQs](/azure/devops/organizations/accounts/faq-azure-access)
-- [Change your organization's billing subscription](/azure/devops/organizations/billing/change-azure-subscription)
-- [About projects and scaling your organization](/azure/devops/organizations/projects/about-projects)
-- [Create a project in Azure DevOps](/azure/devops/organizations/projects/create-project)
-- [Rename a project in Azure DevOps](/azure/devops/organizations/projects/rename-project)
-- [Security groups, service accounts, and permissions in Azure DevOps](/azure/devops/organizations/security/permissions)
-
-## Pipelines
+## Azure Pipelines
 
 ### New articles
 
-- [Publish Maven artifacts with Azure Pipelines](/azure/devops/pipelines/artifacts/publish-maven-artifacts)
+- [Agent software version 4](/azure/devops/pipelines/agents/v4-agent)
 
 ### Updated articles
 
-- [Push an image](/azure/devops/pipelines/ecosystems/containers/push-image)
-- [Manage service connections](/azure/devops/pipelines/library/service-endpoints)
-- [Restore NuGet packages in Azure Pipelines](/azure/devops/pipelines/packages/nuget-restore)
-- [Use gates and approvals to control your deployment](/azure/devops/pipelines/release/deploy-using-approvals)
-- [Classic release pipelines](/azure/devops/pipelines/release/index)
-- [Maven task](/azure/devops/pipelines/tasks/build/maven)
+- [Publish NuGet packages to NuGet.org (Classic/YAML)](/azure/devops/pipelines/artifacts/publish-public-registry)
+- [Publish Cargo packages with Azure Pipelines](/azure/devops/pipelines/artifacts/cargo-pipelines)
+- [Publish Python packages with Azure Pipelines](/azure/devops/pipelines/artifacts/pypi)
+- [Sign a mobile app](/azure/devops/pipelines/apps/mobile/app-signing)
+- [Create a multi-stage release pipeline (Classic)](/azure/devops/pipelines/release/define-multistage-release-process)
+- [Use predefined variables](/azure/devops/pipelines/build/variables)
+- [Manage security in Azure Pipelines](/azure/devops/pipelines/policies/permissions)
+- [Troubleshoot Azure Resource Manager service connections](/azure/devops/pipelines/release/azure-rm-endpoint)
+- [Set variables in scripts](/azure/devops/pipelines/process/set-variables-scripts)
+- [Use Azure Pipelines to build and push container images to registries](/azure/devops/pipelines/ecosystems/containers/push-image)
+- [Azure Resource Manager service connection special cases](/azure/devops/pipelines/library/azure-resource-manager-alternate-approaches)
+- [Connect to Azure with an Azure Resource Manager service connection](/azure/devops/pipelines/library/connect-to-azure)
+- [Run a self-hosted agent in Docker](/azure/devops/pipelines/agents/docker)
 
-## Project
-
-### Updated articles
-
-- [Publish a Git repo to a wiki](/azure/devops/project/wiki/publish-repo-to-wiki)
-- [Markdown syntax for wikis](/azure/devops/project/wiki/wiki-markdown-guidance)
-
-## Report
-
-### Updated articles
-
-- [Data model for Analytics](/azure/devops/report/extend-analytics/data-model-analytics-service)
-
-## Repos
+## Azure Repos
 
 ### Updated articles
 
-- [Copy changes with cherry-pick](/azure/devops/repos/git/cherry-pick)
-- [Clone an existing Git repo](/azure/devops/repos/git/clone)
-- [Save your work with commits](/azure/devops/repos/git/commits)
-- [Create a new Git repo](/azure/devops/repos/git/creatingrepo)
-- [Git preferences and settings in Visual Studio](/azure/devops/repos/git/git-config)
-- [Get started with Git in Azure Repos](/azure/devops/repos/git/gitquickstart)
-- [Resolve merge conflicts](/azure/devops/repos/git/merging)
-- [Update code with fetch, merge, and pull](/azure/devops/repos/git/pulling)
-- [Apply changes with rebase](/azure/devops/repos/git/rebase)
-- [Review history](/azure/devops/repos/git/review-history)
-- [Share your code with Azure Repos and Visual Studio](/azure/devops/repos/git/share-your-code-in-git-vs)
-- [Undo changes](/azure/devops/repos/git/undo)
-- [Add check-in policies](/azure/devops/repos/tfvc/add-check-policies)
-- [Add command (Team Foundation Version Control)](/azure/devops/repos/tfvc/add-command)
-- [Add files to the version control server](/azure/devops/repos/tfvc/add-files-server)
-- [Associate a file type with a file-comparison tool](/azure/devops/repos/tfvc/associate-file-type-file-comparison-tool)
-- [Associate a file type with a merge tool](/azure/devops/repos/tfvc/associate-file-type-merge-tool)
-- [Branch folders and files](/azure/devops/repos/tfvc/branch-folders-files)
-- [Checkin command](/azure/devops/repos/tfvc/checkin-command)
-- [Checkout (or Edit) command](/azure/devops/repos/tfvc/checkout-or-edit-command)
-- [Check in your work to the team's codebase](/azure/devops/repos/tfvc/check-your-work-team-codebase)
-- [Compare files using Team Foundation Version Control](/azure/devops/repos/tfvc/compare-files)
-- [Choosing the right version control for your project](/azure/devops/repos/tfvc/comparison-git-tfvc)
-- [Configure check-in notes](/azure/devops/repos/tfvc/configure-check-notes)
-- [Create and work with workspaces](/azure/devops/repos/tfvc/create-work-workspaces)
+- [Authentication with Azure Repos](/azure/devops/repos/git/auth-overview)
+- [Use Git Credential Manager to authenticate to Azure Repos](/azure/devops/repos/git/set-up-credential-managers)
 
-## Service-hooks
+## Extend
 
 ### Updated articles
 
-- [Service hook consumers](/azure/devops/service-hooks/consumers)
-- [Create a service hook subscription programmatically](/azure/devops/service-hooks/create-subscription)
-- [Service hooks events](/azure/devops/service-hooks/events)
-- [Integrate with service hooks](/azure/devops/service-hooks/overview)
+- [Publish from the command line](/azure/devops/extend/publish/command-line)
 
-## User guide
+## Integrate
+
+### New articles
+
+- [Authenticate to Azure DevOps with Microsoft Entra](/azure/devops/integrate/get-started/authentication/entra)
 
 ### Updated articles
 
-- [Compare Azure DevOps Services with Azure DevOps Server](/azure/devops/user-guide/about-azure-devops-services-tfs)
-- [Code with Git](/azure/devops/user-guide/code-with-git)
-- [Overview of services](/azure/devops/user-guide/services)
+- [REST API versioning](/azure/devops/integrate/concepts/rest-api-versioning)
+- [Choose the right authentication mechanism](/azure/devops/integrate/get-started/authentication/authentication-guidance)
+- [Building for Azure DevOps with Microsoft Entra OAuth Apps](/azure/devops/integrate/get-started/authentication/entra-oauth)
+- [Use service principals & managed identities in Azure DevOps](/azure/devops/integrate/get-started/authentication/service-principal-managed-identity)
+- [C# client library samples](/azure/devops/integrate/get-started/client-libraries/samples)
 
-## GitHub issue content updates
+## Managed DevOps Pools
 
-Thank you for your feedback on our documentation. This month we made updates to our content to address [the following GitHub issues](https://github.com/MicrosoftDocs/azure-devops-docs/issues?q=linked%3Apr+is%3Aissue+is%3Aclosed+closed%3A2022-10-01..2022-10-31).
+### New articles
 
-- ["How to find the organization owner" link is useless for deleted organizations! #12810](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12810)
-- [Sample Powershell script needs updating #12809](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12809)
-- ['::moniker-end' displayed in rendered docs #12787](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12787)
-- [Incorrect scentence in the Azure artifacts page #12780](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12780)
-- [Potential error in a note about the wiki count limit #12762](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12762)
-- [Should System.ArtifactsDirectory be changed to Pipeline.Workspace in the automatic deployment jobs? #12741](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12741)
-- [What happens to project other resources in those project after directory swtich? #12736](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12736)
-- [Custom Service Hook Consumer documentation lacking substance #12735](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12735)
-- [Suggest 'ubuntu-latest' for the build agent image #12712](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12712)
-- [What environments are available? Is there a Python310? #12709](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12709)
-- [About the split expression #12697](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12697)
-- [Documentation suggested `includes` is not in the pipeline schema #12673](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12673)
-- [clean: true = clean: all?  #12636](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12636)
-- [Invalid sample payload json #12611](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12611)
-- [Several of the documented mermaid diagram types don't work #12597](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12597)
-- [Incomprehensible note in "Logging commands - Azure Pipelines" #12585](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12585)
-- [Python Function App YAML deployment Failed #12552](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12552)
-- [missing url example for a specific nuget feed view #12483](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12483)
-- [incomplete guide #12404](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12404)
-- [Try your extension?? #12309](https://github.com/MicrosoftDocs/azure-devops-docs/issues/12309)
-- [Push step yml not explained #11198](https://github.com/MicrosoftDocs/azure-devops-docs/issues/11198)
-- [Use "-w 0" for base64 command #11086](https://github.com/MicrosoftDocs/azure-devops-docs/issues/11086)
-- [PAT token in a file, not really secure #8777](https://github.com/MicrosoftDocs/azure-devops-docs/issues/8777)
-- [Azure DevOps: No example on how to use PAT to access git repositories #2455](https://github.com/MicrosoftDocs/azure-devops-docs/issues/2455)
+- [Compare Managed DevOps Pools with Azure Virtual Machine Scale Set agents](/azure/devops/managed-devops-pools/migrate-from-scale-set-agents)
 
-## Community contributors
+### Updated articles
 
-The following people contributed to the Azure DevOps docs during this period. Thank you! Learn how to contribute by following the links under "Get involved" in the [what's new landing page](index.yml).
+- [Configure Managed DevOps Pools networking](/azure/devops/managed-devops-pools/configure-networking)
+- [Configure scaling](/azure/devops/managed-devops-pools/configure-scaling)
 
-- [brendankarl](https://github.com/brendankarl) - Brendan Griffin (1)
-- [geralexgr](https://github.com/geralexgr) - Gerasimos Alexiou (1)
-- [IvanYuriev2](https://github.com/IvanYuriev2) (1)
-- [jessehouwing](https://github.com/jessehouwing) - Jesse Houwing (1)
-- [MaratMussabekov](https://github.com/MaratMussabekov) (1)
-- [rgundogmusm](https://github.com/rgundogmusm) (1)
-- [secretGeek](https://github.com/secretGeek) - Leon Bambrick (1)
-- [theBNT](https://github.com/theBNT) (1)
-- [verargulla](https://github.com/verargulla) - Ver Argulla (1)
-- [zippy1981](https://github.com/zippy1981) - Justin Dearing (1)
+## Migrate
+
+### Updated articles
+
+- [Resolve migration errors](/azure/devops/migrate/migration-troubleshooting)
+

@@ -5,8 +5,8 @@ description: Customize a process by adding or modifying a custom control for wor
 ms.custom: inherited-process
 ms.service: azure-devops-boards
 ms.assetid: 7FC3CF0F-1E2B-4AAE-876C-5E358E7B2B72
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: how-to
 monikerRange: '>= azure-devops-2019'
 ms.date: 11/19/2018
@@ -33,7 +33,7 @@ For example, you can add the [**Who recently viewed a work item?** extension](ht
 
 [!INCLUDE [temp](../includes/process-prerequisites.md)] 
 
-To add extensions or edit a process, you must be a member of the Project Collection Administrators group or be [granted explicit permissions to edit a specific process](../../../organizations/security/set-permissions-access-work-tracking.md#process-permissions).
+To add extensions or edit a process, be a member of the Project Collection Administrators group or be [granted explicit permissions to edit a specific process](../../../organizations/security/set-permissions-access-work-tracking.md#process-permissions).
 
 [!INCLUDE [temp](../includes/open-process-admin-context-ts.md)]
 

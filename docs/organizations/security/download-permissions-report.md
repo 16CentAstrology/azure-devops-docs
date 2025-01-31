@@ -3,8 +3,8 @@ title: Download permissions report for a repository
 titleSuffix: Azure DevOps Services
 description: Download json-formatted permission report for a repository.  
 ms.subservice: azure-devops-audit
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: how-to
 monikerRange: 'azure-devops'
 ms.date: 07/07/2022
@@ -21,8 +21,7 @@ You can also use the [Permissions Report REST API](/rest/api/azure/devops/permis
 
 ## Prerequisites
 
-- To download the permissions report, you must be a member of the Project Collection Administrators group. The user interface button won't appear for users who aren't a member of this group. 
-
+**Permissions**: To download the permissions report, be a member of the [**Project Collection Administrators** group](look-up-project-collection-administrators.md). The user interface option isn't available for users who aren't a member of this group.
 
 ## Open Project Settings>Repositories  
 

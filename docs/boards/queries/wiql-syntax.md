@@ -6,8 +6,8 @@ ms.custom: boards-queries
 ms.service: azure-devops-boards
 ms.topic: reference
 ms.assetid: 95DAF407-9208-473D-9F02-4B6E7F64AD0A   
-ms.author: kaelli  
-author: KathrynEE  
+ms.author: chcomley  
+author: chcomley  
 monikerRange: '<= azure-devops'
 ms.date: 10/18/2022
 ---
@@ -17,7 +17,7 @@ ms.date: 10/18/2022
 
 [!INCLUDE [version-lt-eq-azure-devops](../../includes/version-lt-eq-azure-devops.md)]   
 
-You can use the WIQL syntax to [define a query as a hyperlink](../../boards/queries/define-query-hyperlink.md) or when using the [Work Item Query Language (REST API)](/rest/api/azure/devops/wit/wiql).  
+You can use the WIQL syntax to [define a query as a hyperlink](using-queries.md#define-a-query-as-a-hyperlink) or when using the [Work Item Query Language (REST API)](/rest/api/azure/devops/wit/wiql).  
 
 The WIQL syntax supports all functions available through the web portal Query Editor plus a few more. You can specify the fields to return and specify logical grouping of query clauses. In addition, you can use an `ASOF` clause to filter based on assignments based on a previous date.  
 
@@ -26,7 +26,9 @@ The WIQL syntax supports all functions available through the web portal Query Ed
 
 ## Prerequisites
 
-A query returns only those work items for which you have the **View work items** or **View work items in this node** permission. Typically, these permissions are granted to members of the **Readers** and **Contributors** groups for each team project. For more information, see [Permissions and groups](../../organizations/security/permissions.md).  
+| Category | Requirements |
+|--------------|-------------|
+| **Permissions** | **View work items** or **View work items in this node** permission set to **Allow**. Typically, these permissions get granted to members of the **Readers** and **Contributors** groups for each team project. For more information, see [Permissions and groups](../../organizations/security/permissions.md). |
 
 
 ## Query language overview
@@ -52,7 +54,7 @@ ASOF '02-11-2020'
 
 
 > [!TIP] 
-> By installing the [Wiql Editor Marketplace extension](https://marketplace.visualstudio.com/items?itemName=ottostreifel.wiql-editor), you can construct your queries using the Query Editor and then view the WIQL syntax. You can then copy and modify the WIQL syntax and run the query using the **Wiql Playground** hub added to **Boards**.
+> By installing the [Wiql Editor Marketplace extension](https://marketplace.visualstudio.com/items?itemName=ms-devlabs.wiql-editor), you can construct your queries using the Query Editor and then view the WIQL syntax. You can then copy and modify the WIQL syntax and run the query using the **Wiql Playground** hub added to **Boards**.
 
 :::row:::
    :::column span="1":::
@@ -149,19 +151,13 @@ You can add a custom field to a query clause. With WIQL, you must specify the re
 
 For projects that use the On-premises XML process model, the reference name is as defined by the XML work item type definitions. 
 
-To learn more, see [Work item fields and attributes](../work-items/work-item-fields.md).
+For more information, see [Work item fields and attributes](../work-items/work-item-fields.md).
 
 ::: moniker-end 
 
-::: moniker range="tfs-2018"  
+ 
 
-You can add a custom field to a query clause. With WIQL, you must specify the reference name for the custom field. 
-
-To learn more, see [Add or modify a field to track work](../../reference/add-modify-field.md).
-
-::: moniker-end 
-
-<a id="where-clause" />
+<a id="where-clause"></a>
 
 ## Specify filter clauses (`WHERE`)
 
@@ -201,13 +197,13 @@ Each filter condition is composed of three parts, each of which must conform to 
 - **Operator**: Valid values are specified in the [Operators](#operators) section later in this article. 
 - **Field value**: You can specify one of the following three values depending on the field specified.  
 	- A *literal value* must match the data type of the field value. 
-	- A *variable or macro that indicates a certain value. For example, **@Me** indicates the person who is running the query. For more information, see [Macros and variables](#macros) later in this article.
+	- A *variable* or macro that indicates a certain value. For example, **@Me** indicates the person who is running the query. For more information, see [Macros and variables](#macros) later in this article.
 	- The name of another *field*. For example, you can use `[Assigned to] = [Changed by]` to find work items that are assigned to the person who changed the work item most recently.
 
 For a description and reference names of all system-defined fields, see [Work item field index](../work-items/guidance/work-item-field.md).
 
 
-<a id="operators" />
+<a id="operators"></a>
 
 ### Operators 
 
@@ -276,7 +272,7 @@ Beyond these basic operators, there are some behaviors and operators specific to
    :::column-end:::
    :::column span="3":::
    
-   `= , <> , > , < , >= , <= , =[Field], <>[Field], >[Field], <[Field], >=[Field], <=[Field], Contains, Does Not Contain, In, Not In, In Group, Not In Group, Was Ever`
+   `= , <> , > , < , >= , <= , =[Field], <>[Field], >[Field], <[Field], >=[Field], <=[Field], Contains, Not Contains, In, Not In, In Group, Not In Group, Was Ever`
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -285,7 +281,7 @@ Beyond these basic operators, there are some behaviors and operators specific to
    :::column-end:::
    :::column span="3":::
    
-   `Contains Words, Does Not Contain Words, Is Empty, Is Not Empty`
+   `Contains Words, Not Contains Words, Is Empty, Is Not Empty`
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -293,7 +289,7 @@ Beyond these basic operators, there are some behaviors and operators specific to
    String
    :::column-end:::
    :::column span="3":::
-   `= , <> , > , < , >= , <= , =[Field], <>[Field], >[Field], <[Field], >=[Field], <=[Field], Contains, Does Not Contain, In, Not In, In Group, Not In Group, Was Ever`
+   `= , <> , > , < , >= , <= , =[Field], <>[Field], >[Field], <[Field], >=[Field], <=[Field], Contains, Not Contains, In, Not In, In Group, Not In Group, Was Ever`
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -361,7 +357,7 @@ WHERE
 ```
 
 
-<a id="macros" />
+<a id="macros"></a>
 
 ## Macros or variables
 
@@ -381,16 +377,7 @@ The following table lists the macros or variables you can use within a WIQL quer
 
 ::: moniker-end
 
-::: moniker range="< azure-devops-2019"
-|      Macro     |                 Usage   |
-|-----------------|----------------|
-| **@Me**|  Use this variable to automatically search for the current user's alias in a field that contains user aliases. For example, you can find work items that you opened if you set the **Field** column to **Activated By**, the **Operator** column to **=**, and the **Value** column to **@Me**.  |
-|**@CurrentIteration** | Use this variable to automatically filter for work items assigned to the current sprint for the selected team based on the selected team context. |
-| **@Project**|Use this variable to search for work items in the current project. For example, you can find all the work items in the current project if you set the **Field** column to **Team Project**, the **Operator** column to **=**, and the **Value** column to **@Project**.  |
-|**@Today**| Use this variable to search for work items that relate to the current date or to an earlier date. You can also modify the <strong>@Today</strong> variable by subtracting days. For example, you can find all items activated in the last week if you set the **Field** column to **Activated Date**, the **Operator** column to **&gt;=**, and the **Value** column to **@Today - 7**. |
-|**[Any]** |Use this variable to search for work items that relate to any value that is defined for a particular field. |
 
-::: moniker-end
 
  
 ### @me macro
@@ -435,7 +422,7 @@ WHERE
 ```
 
 
-<a id="start-of" />
+<a id="start-of"></a>
 
 
 ::: moniker range=">= azure-devops-2019"
@@ -498,13 +485,13 @@ WHERE
  
 ### Custom macros 
 
-WIQL also supports arbitrary custom macros. Any string prefixed by an `@` is treated as a custom macro and will be substituted. The replacement value for the custom macro is retrieved from the context parameter of the query method in the object model. The following method is the API used for macros: 
+WIQL also supports arbitrary custom macros. Any string prefixed by an `@` is treated as a custom macro and gets substituted. The replacement value for the custom macro is retrieved from the context parameter of the query method in the object model. The following method is the API used for macros: 
 
 ```csharp
 public WorkItemCollection Query(string wiql, IDictionary context)
 ```
 
-The context parameter contains key-value pairs for macros. For example, if the context contains a key-value pair of (project, MyProject), then **@project** will be replaced by `MyProject` in the WIQL. This replacement is how the work item query builder handles the **@project** macro in Visual Studio.
+The context parameter contains key-value pairs for macros. For example, if the context contains a key-value pair of (project, MyProject), then **@project** gets replaced by `MyProject` in the WIQL. This replacement is how the work item query builder handles the **@project** macro in Visual Studio.
 
 ## Specify historical queries (`ASOF`)
 
@@ -513,7 +500,7 @@ You can use an `ASOF` clause in a query to filter for work items that satisfy th
 > [!NOTE] 
 > You can’t create `ASOF` queries in the query builder in Visual Studio. If you create a query file (.wiq) that includes an `ASOF` clause, and then load that in Visual Studio, the `ASOF` clause is ignored.
 
-Suppose a work item was classified under an **Iteration Path** of `Fabrikam Fiber\Release 1` and assigned to 'Jamal Hartnett' prior to 5/05/2022. However, the work item was recently assigned to 'Raisa Pokrovskaya' and moved to a new iteration path of Release 2. The following example query will return this work items assigned to Jamal Hartnett because the query is based on the state of work items as of a past date and time. 
+Suppose a work item was classified under an **Iteration Path** of `Fabrikam Fiber\Release 1` and assigned to 'Jamal Hartnett' prior to 5/05/2022. However, the work item was recently assigned to 'Raisa Pokrovskaya' and moved to a new iteration path of Release 2. The following example query returns work items assigned to Jamal Hartnett because the query is based on the state of work items as of a past date and time. 
 
 ```WIQL
 SELECT
@@ -561,7 +548,7 @@ ORDER BY [Microsoft.VSTS.Common.Priority],
 
 
 
-<a id="linked-work-items" />
+<a id="linked-work-items"></a>
 
 ## Query for links between work items
 
@@ -667,7 +654,7 @@ You can specify one of the following system link type names.
 ::: moniker-end
 
 ::: moniker range="< azure-devops"
-You can specify one of the system link type names, listed below, or [a custom link type you've defined with the On-premises XML process](../../reference/xml/link-type-element-reference.md). 
+You can specify one of the system link type names, listed below, or [a custom link type you've defined with the On-premises XML process](/previous-versions/azure/devops/reference/xml/link-type-element-reference). 
 ::: moniker-end
 
 - `System.LinkTypes.Hierarchy-Forward`
@@ -960,7 +947,6 @@ WHERE
 - [Query fields, operators, values, and variables](query-operators-variables.md)  
 - [Work item fields and attributes](../work-items/work-item-fields.md) 
 - [About managed queries](about-managed-queries.md)  
-- [Cross-service and enhanced query operations](query-support-integration-cross-service-extensions.md)
 - [Define a query](using-queries.md)      
 
 
@@ -973,6 +959,6 @@ https://msdn.microsoft.com/library/bb130306.aspx
 <!---
 
 > [!WARNING]  
-> You can use a WorkItem that was returned by a query to get the value of a Field, even if the query did not return the value. If you do this, another round trip to the server will occur. For more information, see Performance Considerations.
+> You can use a WorkItem that was returned by a query to get the value of a Field, even if the query did not return the value. If you do this, another round trip to the server occurs. For more information, see Performance Considerations.
 
 -->

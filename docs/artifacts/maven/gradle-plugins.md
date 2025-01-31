@@ -21,19 +21,15 @@ With Azure Artifacts feeds, you can enable upstream sources to include packages 
 
 1. Select the ![gear icon](../../media/icons/gear-icon.png) at the top right corner to navigate to **Feed Settings**.
 
-1. Select **Upstream Sources**.
+1. Select **Upstream Sources**, and then select **Add Upstream**.
 
-1. Select **Add Upstream**.
-
-    :::image type="content" source="./media/upstream-settings-add-upstream.png" alt-text="A screenshot showing how to access upstream sources to add a new upstream.":::
+    :::image type="content" source="./media/gradle-upstream-source.png" alt-text="A screenshot showing how to access upstream sources to add a new upstream.":::
 
 1. Select **Public source**, and then select **Gradle Plugins (https://plugins.gradle.org/m2/)** from the dropdown menu.
 
+1. Select **Add** when you're done, and then select **Save** at the top right corner to save your changes.
+
     :::image type="content" source="./media/gradle-plugins.png" alt-text="A screenshot showing how to add Gradle Plugins.":::
-
-1. Select **Save** when you are done.
-
-1. Select **Save** at the top right corner to save your changes.
 
 ## View saved packages
 

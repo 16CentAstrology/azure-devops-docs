@@ -5,8 +5,8 @@ description: Learn how to assign work to a sprint or iteration using Agile proce
 ms.custom: boards-sprints
 ms.service: azure-devops-boards
 ms.assetid: 
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: tutorial
 monikerRange: '<= azure-devops'
 ms.date: 04/01/2022
@@ -33,11 +33,7 @@ Here's an example of a sprint plan that consists of backlog items and the tasks 
 ::: moniker-end
 
 
-::: moniker range="tfs-2018"
 
-![Screenshot of Sprint planning, TFS 2018.](media/sp-intro.png) 
-
-::: moniker-end
 	
 In this article you'll learn how to:  
 
@@ -48,7 +44,7 @@ In this article you'll learn how to:
 
 Planning meetings typically consist of two parts. In the first part, the team and product owner identify the 
 backlog items that the team feels it can commit to completing in the sprint, based on experience with previous sprints. 
-These items get added to the sprint backlog. In the second part, your team determines how it will develop and test each item. 
+These items get added to the sprint backlog. In the second part, your team determines how it develops and tests each item. 
 They then define and estimate the tasks required to complete each item. Finally, your team commits to implementing 
 some or all of the items based on these estimates. 
 
@@ -58,15 +54,16 @@ some or all of the items based on these estimates.
 >  
 > When you've completed your sprint plan, your sprint backlog should contain all the information your team needs to successfully complete work within the time allotted without having to rush at the end. 
 
-[!INCLUDE [temp](../includes/prerequisites.md)]
+## Prerequisites
 
+[!INCLUDE [temp](../includes/prerequisites.md)]
 
 ## Open your team's product backlog
 
 > [!NOTE]  
-> Your sprint backlogs are one of three classes of backlogs available to you. For an overview of the features supported on each backlog and the two types of boards, see [Backlogs, boards, and plans](../backlogs/backlogs-boards-plans.md?toc=/azure/devops/boards/sprints/toc.json&bc=/azure/devops/boards/sprints/breadcrumb/toc.json). 
+> Your sprint backlogs are one of three classes of backlogs available to you. For an overview of the features supported on each backlog and the two types of boards, see [Backlogs, boards, and plans](../backlogs/backlogs-boards-plans.md?toc=/azure/devops/boards/sprints/toc.json). 
 >
-> For a beginner's guide to planning and tracking work, see [Get started with Agile tools](../get-started/what-is-azure-boards.md?toc=/azure/devops/boards/sprints/toc.json&bc=/azure/devops/boards/sprints/breadcrumb/toc.json).  
+> For a beginner's guide to planning and tracking work, see [Get started with Agile tools](../get-started/what-is-azure-boards.md?toc=/azure/devops/boards/sprints/toc.json).  
 
 ::: moniker range=">= azure-devops-2020"  
 
@@ -90,7 +87,7 @@ From your web browser, open your product backlog.
 	> [!div class="mx-imgBorder"]  
 	> ![Screenshot for choose product backlog level, Backlog items, Stories, or Requirements.](../sprints/media/assign-items-sprint//select-product-backlog-agile-s155.png) 
 
-2. (Optional) To choose which columns should display and in what order, choose the  :::image type="icon" source="../../media/icons/actions-icon.png" border="false"::: actions icon and select **Column options**. To learn more, see [Change column options](../backlogs/set-column-options.md). 
+2. (Optional) To choose which columns should display and in what order, choose the  :::image type="icon" source="../../media/icons/actions-icon.png" border="false"::: actions icon and select **Column options**. For more information, see [Change column options](../backlogs/set-column-options.md). 
 
 	> [!div class="mx-imgBorder"]  
 	> ![Screenshot, Open Column Options.](../sprints/media/assign-items-sprint/open-column-options-s155.png) 
@@ -116,33 +113,17 @@ From your web browser, open your product backlog.
 	> [!div class="mx-imgBorder"]  
 	> ![Screenshot, Choose product backlog level, Backlog items, Stories, or Requirements, Azure DevOps 2019.](media/assign-items-sprint/select-product-backlog-agile.png) 
 
-2. (Optional) To choose which columns should display and in what order, choose the  :::image type="icon" source="../../media/icons/actions-icon.png" border="false"::: actions icon and select **Column options**. You may want to add the Iteration Path to the set of columns that appear on your backlog. To learn more, see [Change column options](../backlogs/set-column-options.md). 
+2. (Optional) To choose which columns should display and in what order, choose the  :::image type="icon" source="../../media/icons/actions-icon.png" border="false"::: actions icon and select **Column options**. You may want to add the Iteration Path to the set of columns that appear on your backlog. For more information, see [Change column options](../backlogs/set-column-options.md). 
 
 	> [!div class="mx-imgBorder"]  
 	> ![Screenshot for Open Column Options, Azure DevOps 2019.](media/assign-items-sprint/open-work-backlogs-column-options-agile.png) 
 
 ::: moniker-end  
 
-::: moniker range="tfs-2018"  
-
-1. From your web browser, open your team's product backlog. (1) Select the team from the project/team selector, choose (2) **Work**, (3) **Backlogs**, and then (4) the product backlog, which is **Backlog items** (for Scrum), **Stories** (for Agile), or **Requirements** (for CMMI).  
-
-	> [!div class="mx-imgBorder"]  
-	> ![Screenshot, Open the Boards>Backlogs page, TFS 2018.](media/assign-items-sprint/open-work-backlogs-standard.png)  
-
-	To choose another team, open the project/team selector and select a different team or choose the **Browse** option.  
-
-   > [!div class="mx-imgBorder"]  
-   > ![Choose another team](media/assign-items-sprint/team-selector-backlogs-standard.png)  
-
-	The set of sprints selected for your team appears in the left pane. If you don't see any sprints listed, you can add sprints or select existing sprints for your team's use. To learn how, see [Define sprints](define-sprints.md). 
-
-1. (Optional) To choose which columns should display and in what order, choose **Column options**. You may want to add the Iteration Path to the set of columns that appear on your backlog. To learn more, see [Change column options](../backlogs/set-column-options.md).
-
-::: moniker-end  
+  
 
 
-<a id="drag-drop" />
+<a id="drag-drop"></a>
 
 ## Assign work from your backlog to a sprint 
    
@@ -169,29 +150,19 @@ You can quickly assign work items to a sprint through drag-and-drop from the pro
 	> [!div class="mx-imgBorder"]
 	> ![Boards>Backlogs>Drag-drop items onto sprint](media/define-sprints/drag-drop-backlog-items-to-sprint.png)
 
-2. Select one or more items from the backlog and drag them to the sprint you're planning. This action will update the Iteration Path of the backlog items and any of its child tasks to the sprint you selected. 
+2. Select one or more items from the backlog and drag them to the sprint you're planning. This action updates the Iteration Path of the backlog items and any of its child tasks to the sprint you selected. 
 
 3. Check the level of effort displayed in the sprint window.  As you assign backlog items to a sprint, the sprint window updates with a running tally of the number of backlog items and tasks and the **Planned Effort**. 
 
 	> [!div class="mx-imgBorder"]
 	> ![Product backlog page, drag work items to sprint or assign to sprint through the context menu](media/assign-items-sprint/sprint-window-effort.png)   
 
-	*Planned Effort* provides a sum of all *Story Points* or *Effort* defined for backlog items assigned to the sprint. This sum represents your initial guess at the amount of work your team will complete in the sprint. Next, you'll define tasks, estimate that work, and use your team's capacity to make sure it fits in the sprint. 
+	*Planned Effort* provides a sum of all *Story Points* or *Effort* defined for backlog items assigned to the sprint. This sum represents your initial guess at the amount of work your team completes in the sprint. Next, you'll define tasks, estimate that work, and use your team's capacity to make sure it fits in the sprint. 
 
 ::: moniker-end
 
 
-::: moniker range="tfs-2018"
 
-Select one or more items and drag them to one of the listed sprints.  
-
-> [!NOTE]   
-> The **Iteration Paths** listed only show the current sprint and the next 10 future sprints in the list, even if more have been selected for the team. Only a team administrator or member of the **Project Administrators** group can [select iterations for a team](../../organizations/settings/set-iteration-paths-sprints.md). 
-	
-> [!div class="mx-imgBorder"]
-> ![Product backlog page, drag work items to sprint or assign to sprint through the context menu](media/sp-assign-to-sprints.png)    
-
-::: moniker-end
 
 
 <a id="bulk-modify">  </a>
@@ -212,7 +183,7 @@ With multi-select, you can complete several actions on several work items at onc
 
 To select several items in a sequence, hold down the shift key. To select several non-sequential items, use the Ctrl key. Then, you can either drag the selected items to a new position within the backlog, to a different sprint, or select an option from the context (![context icon](../media/icons/context_menu.png)) or action (  :::image type="icon" source="../media/icons/actions-icon.png" border="false"::: ) menu of one of the items. 
 
-To learn more, see [Bulk modify work items](../backlogs/bulk-modify-work-items.md). 
+For more information, see [Bulk modify work items](../backlogs/bulk-modify-work-items.md). 
 
 ## Next step
 

@@ -5,8 +5,8 @@ description: Import a Hosted XML process to support Azure Boards customization i
 ms.service: azure-devops-boards
 ms.assetid: AF7ABA0F-D3E8-48CA-9164-ABC966BAAA77
 ms.topic: how-to
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 monikerRange: 'azure-devops'
 ms.date: 03/06/2020
 ---
@@ -72,7 +72,7 @@ Migration to Azure DevOps Services is a great time to think about process alignm
 Prior to importing a process, you'll want to [customize it to support your work tracking needs](customize-process.md). 
 Name your process something other than Scrum, Agile, or CMMI. These system processes are locked and you're prevented from overwriting them.   
 
-1. Only members of the **Project Collection Administrators** group can import a process. To learn more, see [Change project collection-level permissions](../../../security/change-organization-collection-level-permissions.md).  
+1. Only members of the **Project Collection Administrators** group can import a process. For more information, see [Change project collection-level permissions](../../../security/change-organization-collection-level-permissions.md).  
 
 2.  From the **Processes** tab, choose import and then drag-and-drop or browse to the zip file of the process you've customized.  
   

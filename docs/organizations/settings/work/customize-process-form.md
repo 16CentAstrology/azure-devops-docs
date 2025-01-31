@@ -5,8 +5,8 @@ description: Customize the web form for a work item type and Inheritance process
 ms.custom: inherited-process   
 ms.service: azure-devops-boards
 ms.assetid: E0AACC40-9A9E-4A48-A1D7-1CE70D53EEA8  
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 monikerRange: '>= azure-devops-2019'
 ms.topic: how-to
 ms.date: 04/22/2019
@@ -83,7 +83,7 @@ Here we move the Customer ticket field to the Details page and the Customer focu
 <a id="show-hide-remove-field"></a>
 ## Remove a field from a form    
  
-You can only remove custom fields from a form. For inherited fields, you can hide them from showing on the form. To learn more, see [Customize a field for a process, Show, hide, or remove a field](customize-process-field.md#show-hide-remove-field).  
+You can only remove custom fields from a form. For inherited fields, you can hide them from showing on the form. For more information, see [Customize a field for a process, Show, hide, or remove a field](customize-process-field.md#show-hide-remove-field).  
 
 <!---
 For a custom field, open the field's &hellip; context menu, and then choose the ![Delete icon](../../../media/icons/delete_icon.png) **Remove** option.   

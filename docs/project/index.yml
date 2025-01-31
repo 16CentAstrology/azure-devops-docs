@@ -9,9 +9,9 @@ metadata:
   description: Work across Azure DevOps Services and projects, share information, and create public projects. 
   ms.subservice: azure-devops-projects 
   ms.topic: landing-page 
-  author: KathrynEE 
-  ms.author: kaelli 
-  ms.date: 02/18/2022
+  author: chcomley 
+  ms.author: chcomley 
+  ms.date: 07/03/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 
@@ -53,12 +53,14 @@ landingContent:
             url: ./wiki/add-edit-wiki.md
           - text: Publish a Git repository to a wiki
             url: ./wiki/publish-repo-to-wiki.md
+          - text: Restore a deleted wiki
+            url: ./wiki/restore-deleted-wiki.md
       - linkListType: reference
         links:
           - text: Syntax guidance for basic Markdown usage
             url: ./wiki/markdown-guidance.md
           - text: Syntax guidance for Markdown usage in Wiki
-            url: ./wiki/wiki-markdown-guidance.md
+            url: ./wiki/markdown-guidance.md
   - title: Search
     linkLists:
       - linkListType: overview
@@ -100,7 +102,7 @@ landingContent:
           - text: Request feedback, Test & Feedback extension
             url: ../test/request-stakeholder-feedback.md?toc=/azure/devops/project/toc.json
           - text: Request feedback, Microsoft Feedback Client
-            url: ./feedback/get-feedback.md
+            url: /previous-versions/azure/devops/project/feedback/get-feedback
           - text: Track feedback
             url: ../test/track-stakeholder-feedback.md?toc=/azure/devops/project/toc.json
  

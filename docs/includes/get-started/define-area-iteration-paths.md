@@ -1,12 +1,12 @@
 ---
 ms.subservice: azure-devops-new-user
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: include
 ms.date: 02/28/2022
 ---
 
-<a id="areas-iterations" />
+<a id="areas-iterations"></a>
 
 ### Define area and iteration paths to track work
 

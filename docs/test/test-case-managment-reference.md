@@ -3,9 +3,10 @@ title: Test case management commands (tcm.exe)
 titleSuffix: Azure DevOps  
 description: Learn which commands you can use to manage Azure Test Plans
 ms.service: azure-devops-test-plans
+ms.custom: UpdateFrequency3
 ms.topic: reference
-ms.author: kaelli
-author: KathrynEE
+ms.author: jeom
+author: raviLiftr
 monikerRange: '<= azure-devops'
 ms.date: 01/18/2022
 ---
@@ -20,7 +21,7 @@ You can perform several tasks to list, view, copy/clone or run tests using the *
 
 ## Work with the TCM command-line tool 
 
-To exercise the TCM command-line tool, you must have the following in place: 
+To exercise the TCM command-line tool, have the following in place: 
 
 - Installed Visual Studio 2017 Professional or earlier version. You access **tcm.exe** from the command prompt and the following directories: 
 	`%programfiles(x86)%\Microsoft Visual Studio\2017\Professional\Common7\IDE`  
@@ -35,7 +36,7 @@ To exercise the TCM command-line tool, you must have the following in place:
 	|**/teamproject**:`project`|Required. The name of the project that contains the test objects you want to clone or import automated tests into.|
 	|**/login**:`username,[password]`|Optional. Specifies the name and password of a valid Azure DevOps user and who has permissions to run the command. Use this option if you're using basic authentication, you're not connected to a domain, or your Windows credentials don't have the appropriate permissions. |
 
-- You must be a valid member of the project you want to access and have the required permissions based on the commands you run. To learn more, see [Manual test access and permissions](manual-test-permissions.md). 
+- Be a valid member of the project you want to access and have the required permissions based on the commands you run. For more information, see [Manual test access and permissions](manual-test-permissions.md). 
  
 ## TCM commands
 
@@ -69,7 +70,7 @@ The following table provides links to articles that describe how to exercise the
 :::row-end:::
 :::row:::
    :::column span="2":::
-   [`tcm fieldmapping`](../reference/witadmin/tcm-customize-manage-test-experience.md): Imports or exports an XML file for defining the resolution types, bug type, and failure types.   
+   [`tcm fieldmapping`](/previous-versions/azure/devops/reference/witadmin/tcm-customize-manage-test-experience): Imports or exports an XML file for defining the resolution types, bug type, and failure types.   
    ::: moniker range=">= azure-devops-2020"
    > [!NOTE]  
    > You can only exercise this command on collections that use the Online XML process model. For Azure DevOps Server 2020 and later versions that use the Inherited process model, import of XML files aren't supported. 

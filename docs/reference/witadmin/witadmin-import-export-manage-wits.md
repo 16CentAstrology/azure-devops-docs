@@ -6,8 +6,8 @@ ms.service: azure-devops-boards
 ms.custom: witadmin
 ms.assetid: 97d7ea1c-df1f-4999-adc9-b38dd2a6cca6
 ms.topic: reference
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 monikerRange: '<= azure-devops'
 ms.date: 12/01/2022
 ---
@@ -34,9 +34,9 @@ To learn more about how work item types are used to track work, see [Track your 
 
 ## Prerequisites  
   
-For the project where the work item types are defined, you must have the following permissions set:   
--   To export or list work item types, you must be a member of the **Project Administrators** group or have your **View project-level information** permission set to **Allow**.    
--   To destroy, import, or rename work item types, you must be a member of the **Team Foundation Administrators** security group or the **Project Administrators** security group.  
+For the project where the work item types are defined, have the following permissions set:   
+-   To export or list work item types, be a member of the **Project Administrators** group or have your **View project-level information** permission set to **Allow**.    
+-   To destroy, import, or rename work item types, be a member of the **Team Foundation Administrators** security group or the **Project Administrators** security group.  
   
 For more information, see [Change project collection-level permissions](../../organizations/security/change-organization-collection-level-permissions.md).  
   
@@ -192,7 +192,7 @@ witadmin destroywitd /collection:"http://FabrikamPrime:8080/tfs/DefaultCollectio
   
 When you delete a WIT that belongs to a category, you must update the categories definition for the project to reflect the new name. In particular, the [Agile planning tools](../../boards/get-started/what-is-azure-boards.md) will not work until you update the categories definition.  
   
-For more information, see [Import and export categories](witadmin-import-export-categories.md).  
+For more information, see [Import and export categories](/previous-versions/azure/devops/reference/witadmin/witadmin-import-export-categories).  
   
 ## Related articles  
 -  [Customize your work tracking experience](../customize-work.md)

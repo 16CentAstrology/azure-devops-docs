@@ -1,7 +1,7 @@
 ---
 ms.subservice: azure-devops-new-user
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: include
 ms.date: 02/25/2022
 ---
@@ -11,7 +11,7 @@ ms.date: 02/25/2022
 
 ## Remove unused services 
 
-To simplify the web portal user interface, you can disable select services. For example, if you use a project only to log bugs, then disable all services except for **Boards**. To learn more, see [Turn a service on or off](../../organizations/settings/set-services.md).  
+To simplify the web portal user interface, you can disable select services. For example, if you use a project only to log bugs, then disable all services except for **Boards**. For more information, see [Turn a service on or off](../../organizations/settings/set-services.md).  
 
 This example shows that **Test Plans** is disabled:
 

@@ -1,7 +1,7 @@
 ---
 ms.subservice: azure-devops-security: devops-cicd
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: include
 ms.date: 08/18/2021
 ---
@@ -15,8 +15,8 @@ Edit task group
 
 -->
 
-|Task|Readers|Contributors|Build Admins|Project Admins|Release Admins|
-|----|-------|------------|------------|--------------|--------------|
-|Administer task group permissions| | |✔️|✔️|✔️|  
-|Delete task group| | |✔️|✔️|✔️|  
-|Edit task group|  | |✔️|✔️|✔️|  
+|Task                             |Readers|Contributors|Build Admins|Project Admins|Release Admins|
+|----                             |:-------:|:------------:|:------------:|:--------------:|--------------|
+|Administer task group permissions|       |            |✔️          |✔️           |✔️           |  
+|Delete task group                |       |            |✔️          |✔️           |✔️           |  
+|Edit task group                  |       |✔️         |✔️          |✔️           |✔️           |  

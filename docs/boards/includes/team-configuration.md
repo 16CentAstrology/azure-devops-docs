@@ -2,8 +2,8 @@
 ms.service: azure-devops-boards
 ms.topic: include
 ms.manager: mijacobs
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.date: 01/09/2020
 ---
 
@@ -47,15 +47,14 @@ ms.date: 01/09/2020
    :::column-end:::
    :::column span="3":::
    - [Select active iteration paths (sprints)](../../organizations/settings/set-iteration-paths-sprints.md)
-   - [Set working days](../../organizations/settings/set-working-days.md)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="1":::
-   Kanban boards
+   Boards
    :::column-end:::
    :::column span="3":::
-   - [Kanban board](../boards/kanban-basics.md)
+   - [Kanban board](../boards/kanban-overview.md)
    - [Features board](../boards/kanban-epics-features-stories.md)
    - [Epics board](../boards/kanban-epics-features-stories.md)
    - [Cumulative flow](../../report/dashboards/cumulative-flow.md)

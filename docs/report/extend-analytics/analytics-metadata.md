@@ -3,8 +3,8 @@ title: OData metadata for Analytics
 titleSuffix: Azure DevOps  
 description: Learn about the entity model OData metadata defined for Analytics in Azure DevOps.
 ms.subservice: azure-devops-analytics
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: tutorial
 monikerRange: '>= azure-devops-2019'
 ms.date: 11/08/2022
@@ -106,7 +106,7 @@ ReferenceName is another common annotation used to define the system identifier 
 
 Querying an individual Entity is useful. Eventually, you'll probably want to filter or expand details of another Entity. To do so, you need to understand how to use the [Navigational Properties](data-model-analytics-service.md) of the Entity model. 
 
-A `NavigationaProperty` with a collection type represents a many-to-many relationship in the model.
+A `NavigationProperty` with a collection type represents a many-to-many relationship in the model.
 
 > [!div class="tabbedCodeSnippets"]
 > ```XML

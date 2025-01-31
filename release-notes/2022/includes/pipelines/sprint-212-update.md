@@ -23,7 +23,7 @@ resources:
     - repository: library
       type: git
       name: FabrikamLibrary
-      ref: ${{ variables['Build.SourceBranchName'] }}
+      ref: ${{ variables['Build.SourceBranch'] }}
 
 steps:
 - checkout: library
@@ -35,7 +35,7 @@ When you run the pipeline, you can specify the branch to check out for the `libr
 
 #### Specify the version of a template to extend at build queue-time
 
-[Templates](https://learn.microsoft.com/azure/devops/pipelines/process/templates) represent a great way to reduce code duplication _and_ [improve the security of your pipelines](https://learn.microsoft.com/azure/devops/pipelines/security/templates?). 
+[Templates](/azure/devops/pipelines/process/templates) represent a great way to reduce code duplication _and_ [improve the security of your pipelines](/azure/devops/pipelines/security/templates?). 
 
 One popular use case is to house templates in their own repository. This reduces the coupling between a template and the pipelines that extend it and makes it easier to evolve the template and the pipelines independently. 
 
@@ -67,7 +67,7 @@ resources:
     - repository: templates
       type: git
       name: Templates
-      ref: ${{ variables['Build.SourceBranchName'] }}
+      ref: ${{ variables['Build.SourceBranch'] }}
 
 extends:
   template: template.yml@templates
@@ -135,12 +135,9 @@ You can use `parameters.` and `variables.` in your template expressions. For var
 
 ### Audit Events for Changes to Approvals
 
-[Approvals](https://learn.microsoft.com/azure/devops/pipelines/process/approvals?view=azure-devops&tabs=check-pass#approvals) allow you to control when a stage should run. This is commonly used to control deployments to production environments. [Auditing](https://learn.microsoft.com/azure/devops/organizations/audit/azure-devops-auditing?view=azure-devops&tabs=preview-page) allows you to meet compliance requirements and monitor the security of your Azure DevOps organization.
+[Approvals](/azure/devops/pipelines/process/approvals?view=azure-devops&tabs=check-pass#approvals&preserve-view=true) allow you to control when a stage should run. This is commonly used to control deployments to production environments. [Auditing](/azure/devops/organizations/audit/azure-devops-auditing?view=azure-devops&tabs=preview-page&preserve-view=true) allows you to meet compliance requirements and monitor the security of your Azure DevOps organization.
 
 When a user is asked to approve a pipeline to deploy to a particular stage, that user can choose to reassign the approval to someone else. 
-
-> [!div class="mx-imgBorder"]
-> ![Audit Events for Changes to Approvals](../../media/212-pipelines-01.png)
 
 Up until now, such actions were not logged in the Audit logs. This issue is fixed now. 
 
@@ -149,7 +146,7 @@ The Audit logs will contain an entry similar to the following.
 [
     {
         "Id": "2517368925862632546;00000264-0000-8888-8000-000000000000;839ad1ba-f72b-4258-bc3f-88be7a4553b5",
-        "CorrelationId": "8392d1ba-f76b-4258-bc3f-88be7a4553b5",
+        "CorrelationId": "aaaa0000-bb11-2222-33cc-444444dddddd",
         "ActivityId": "a298a06c-965f-4e60-9643-2593f2066e37",
         "ActorCUID": "fe950802-bf07-755b-826d-e8dcc066252c",
         "ActorUserId": "fe950802-bf07-755b-826d-e8dcc066252c",
@@ -183,9 +180,6 @@ The Audit logs will contain an entry similar to the following.
 ```
 
 In addition, it will show up in the Audit UI.
-
-> [!div class="mx-imgBorder"]
-> ![Log entry in Audit UI](../../media/212-pipelines-02.png)
 
 ### Task library exposes Agent hosting model
 

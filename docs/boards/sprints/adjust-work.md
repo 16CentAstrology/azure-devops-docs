@@ -5,8 +5,8 @@ description: Learn how to adjust items assigned to a sprint to align with a team
 ms.custom: boards-sprints
 ms.service: azure-devops-boards
 ms.assetid: 
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: tutorial
 monikerRange: '<= azure-devops'
 ms.date: 09/20/2021
@@ -30,6 +30,7 @@ Use this article to learn how to:
 > * Load balance work across your team 
 > * Quickly reassign tasks to another team member    
 
+## Prerequisites
 
 [!INCLUDE [temp](../includes/prerequisites.md)]
 
@@ -53,7 +54,7 @@ Use this article to learn how to:
     > [!div class="mx-imgBorder"]  
     > ![Choose another sprint](media/add-tasks/select-specific-sprint-agile.png)
 
-    The system lists only those sprints that have been selected for the current team focus. If you don't see the sprints you want listed, then choose **New Sprint** from the menu, and then choose **Select existing iteration**. For details, see [Define iteration (sprint) paths](../../organizations/settings/set-iteration-paths-sprints.md). 
+    The system lists only those sprints that have been selected for the current team focus. If you don't see the sprints you want listed, then choose **New Sprint** from the menu, and then choose **Select existing iteration**. For more information, see [Define iteration (sprint) paths](../../organizations/settings/set-iteration-paths-sprints.md). 
 
 
 ::: moniker-end
@@ -74,34 +75,13 @@ Use this article to learn how to:
     > [!div class="mx-imgBorder"]  
     > ![Choose another sprint](media/add-tasks/select-specific-sprint-agile.png)
 
-    The system lists only those sprints that have been selected for the current team focus. If you don't see the sprints you want listed, then choose **New Sprint** from the menu, and then choose **Select existing iteration**. For details, see [Define iteration (sprint) paths](../../organizations/settings/set-iteration-paths-sprints.md). 
+    The system lists only those sprints that have been selected for the current team focus. If you don't see the sprints you want listed, then choose **New Sprint** from the menu, and then choose **Select existing iteration**. For more information, see [Define iteration (sprint) paths](../../organizations/settings/set-iteration-paths-sprints.md). 
 
 
 ::: moniker-end
 
 
-::: moniker range="tfs-2018"
 
-1. From your web browser, open your team's product backlog. (1) Select the team from the project/team selector, choose (2) **Work**, (3) **Backlogs**, and then (4) the product backlog, which is **Backlog items** (for Scrum), **Stories** (for Agile), or **Requirements** (for CMMI). 
-
-	> [!div class="mx-imgBorder"]
-	> ![Open the Boards>Backlogs page](media/assign-items-sprint/open-work-backlogs-standard.png) 
-
-	To choose another team, open the project/team selector and select a different team or choose the **Browse** option. 
-
-	> [!div class="mx-imgBorder"]  
-	> ![Choose another team](media/assign-items-sprint/team-selector-backlogs-standard.png) 
-
-	The set of sprints selected for your team appears in the left pane. If you don't see any sprints listed, you can add sprints or select existing sprints for your team's use. To learn how, see [Define sprints](define-sprints.md). 
-
-1. Choose the sprint you want to plan. 
-
-	> [!div class="mx-imgBorder"]  
-	> ![Choose another sprint](media/add-tasks/choose-sprint-standard.png)
-
-	The system lists only those sprints that have been selected for the current team focus. If you don't see the sprints you want listed, then see [Define iteration (sprint) paths](../../organizations/settings/set-iteration-paths-sprints.md). 
-
-::: moniker-end
 
 
 ## Check your team capacity 
@@ -116,17 +96,12 @@ To view capacity charts, you'll want to turn **Work details** on for a sprint.
 ::: moniker-end
 
 
-::: moniker range="tfs-2018"
 
-> [!div class="mx-imgBorder"]  
-> ![Turn work details on](media//adjust-work/work-details-on-standard.png)
-
-::: moniker-end
 
 
 ## Move items out of a sprint
 
-Move items from the sprint backlog back to the product backlog if your team is over capacity. This action will reset the Iteration Path to the default set for your team. Or, you can move the item into the next sprint your team will work in. All the tasks that you've defined for that item will move with the backlog items.   
+Move items from the sprint backlog back to the product backlog if your team is over capacity. This action resets the Iteration Path to the default set for your team. Or, you can move the item into the next sprint your team works in. All the tasks that you've defined for that item move with the backlog items.   
 
 ::: moniker range=">= azure-devops-2019"
 
@@ -136,21 +111,12 @@ Here we select two items at the bottom of the sprint backlog, open the  :::image
 > ![Move work items to backlog](media/adjust-work/move-items-to-backlog-agile.png)
 
 > [!TIP]    
-> Optionally, you can open the **Planning** pane and drag a work item to the backlog or another sprint which will reassign all child tasks to the same iteration path. See [Assign work to a sprint](assign-work-sprint.md#drag-drop). Also, you can multi-select several items and drag them to the backlog or another sprint. Users with **Stakeholder** access can't drag-and-drop work items.
+> Optionally, you can open the **Planning** pane and drag a work item to the backlog or another sprint which reassigns all child tasks to the same iteration path. See [Assign work to a sprint](assign-work-sprint.md#drag-drop). Also, you can multi-select several items and drag them to the backlog or another sprint. Users with **Stakeholder** access can't drag-and-drop work items.
 
 ::: moniker-end
 
 
-::: moniker range="tfs-2018"
 
-Here we select the last item in the sprint backlog and drag it to the product backlog. 
-
-![Drag items back to product backlog](media/IC797613.png)  
-
-> [!TIP]    
-> Dragging a backlog item to the backlog or another sprint reassigns all child tasks to the same iteration path. Also, you can multi-select several items and drag them to the backlog or another sprint. Users with **Stakeholder** access can't drag-and-drop work items.
-
-::: moniker-end
 
 
 ## Balance work across the team
@@ -171,10 +137,7 @@ As you reassign tasks, capacity bars automatically update.
 
 ::: moniker-end
 
-::: moniker range="tfs-2018"
 
-![Reassign tasks](media/IC797838.png) 
-::: moniker-end
 
 ## Next step
 > [!div class="nextstepaction"]

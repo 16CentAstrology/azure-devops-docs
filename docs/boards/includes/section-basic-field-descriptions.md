@@ -1,8 +1,8 @@
 ---
 ms.service: azure-devops-boards
 ms.manager: mijacobs
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: include
 ms.date: 09/21/2020
 ---
@@ -32,7 +32,7 @@ ms.date: 09/21/2020
       [Assigned To](../queries/query-by-workflow-changes.md)
    :::column-end:::
    :::column span="3":::
-      Assign the work item to the team member responsible for performing the work. Depending on the context you are working in, the drop-down menu lists only team members or contributors to the project.
+      Assign the work item to the team member responsible for performing the work. Depending on the context you're working in, the drop-down menu lists only team members or contributors to the project.
       > [!NOTE]  
       > You can only assign work to a single user. If you need to assign work to more than one user, add a work item for each user and distinguish the work to be done by title and description. The Assigned To field only accepts user accounts that have been [added to a project or team](../../organizations/security/add-users-team-project.md). 
    :::column-end:::
@@ -89,7 +89,7 @@ ms.date: 09/21/2020
    :::column-end:::
    :::column span="3":::
       Provide the criteria to be met before the work item can be closed. Define what "Done" means by describing the criteria for the team to use to verify whether the backlog item or bug fix is fully implemented. 
-      Before work begins, describe the [criteria for customer acceptance](../backlogs/best-practices-product-backlog.md#acceptance) as clearly as possible. Have conversations between the team and customers to determine the acceptance criteria. These criteria help ensure a common understanding within the team to meet customers' expectations. Also, this information provides the basis for acceptance testing.
+      Before work begins, describe the criteria for customer acceptance as clearly as possible. Have conversations between the team and customers to determine the acceptance criteria. These criteria help ensure a common understanding within the team to meet customers' expectations. Also, this information provides the basis for acceptance testing.
    :::column-end:::
 :::row-end:::
 ---
@@ -99,10 +99,10 @@ ms.date: 09/21/2020
    :::column-end:::
    :::column span="3":::
       A subjective rating of the issue or task it relates to the business. You can specify the following values:  
-      - **1**: Product cannot ship without the successful resolution of the work item, and it should be addressed as soon as possible.  
-      - **2**: Product cannot ship without the successful resolution of the work item, but it does not need to be addressed immediately.  
-      - **3**: Resolution of the work item is optional based on resources, time, and risk.  
-      - **4**: Resolution of the work item is not required. 
+      - **1**: Product can't ship without the successful resolution of the work item, and it should be addressed as soon as possible.  
+      - **2**: Product can't ship without the successful resolution of the work item, but it doesn't need to be addressed immediately.  
+      - **3**: Resolution of the work item is optional, based on resources, time, and risk.  
+      - **4**: Resolution of the work item isn't required.
    :::column-end:::
 :::row-end:::
 ---
@@ -112,7 +112,7 @@ ms.date: 09/21/2020
    :::column-end:::
    :::column span="3":::
       A subjective rating of the issue or task it relates to the business. You can specify the following values:  
-      - **Architectural**: Technical services to implement business features that deliver solution .  
+      - **Architectural**: Technical services to implement business features that deliver solution.  
       - **Business**: Services that fulfill customers or stakeholder needs that directly deliver customer value to support the business (Default).  
    :::column-end:::
 :::row-end:::

@@ -3,29 +3,20 @@ title: Project and organization or collection-scoped OData queries
 titleSuffix: Azure DevOps 
 description: Learn how to query OData Analytics for a project or an organization or collection in Azure DevOps.
 ms.subservice: azure-devops-analytics
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 ms.topic: quickstart
 monikerRange: '>= azure-devops-2019'
-ms.date: 09/30/2021
+ms.date: 12/13/2022
 ---
 
 # Project and organization-scoped queries
 
 [!INCLUDE [version-gt-eq-2019](../../includes/version-gt-eq-2019.md)]
 
-::: moniker range="azure-devops"
-Using Analytics for Azure DevOps, you can construct project or organization-scoped queries to return work items or other data of interest. You can run these queries directly in your browser or within Power BI. 
+Using Analytics for Azure DevOps, you can construct queries that are scoped to a project or an organization or collection.  You can run these queries directly in your browser or within Power BI. 
 
-Project-scope queries help answer questions about a single project whereas organization-scope queries allow you to answer questions that cross project boundaries. Organization-scoped queries require broader user permissions or careful scoping restrictions to ensure that your query isn't blocked due to a lack of project permissions.
-::: moniker-end
-
-::: moniker range"< azure-devops"
-Using Analytics for Azure DevOps, you can construct project or collection-scoped queries to return work items or other data of interest. You can run these queries directly in your browser or within Power BI. 
-
-Project-scope queries help answer questions about a single project whereas collection-scope queries allow you to answer questions that cross project boundaries. Collection-scoped queries require broader user permissions or careful scoping restrictions to ensure that your query isn't blocked due to a lack of project permissions.
-
-::: moniker-end
+Project-scope queries help answer questions about a single project whereas organization and collection scoped queries allow you to answer questions that cross project boundaries. Organization and collection scoped queries require broader user permissions or careful scoping restrictions to ensure that your query isn't blocked due to a lack of permissions.
 
 [!INCLUDE [temp](../includes/analytics-preview.md)]
 
@@ -35,7 +26,7 @@ Project-scope queries help answer questions about a single project whereas colle
 > If you don't have access to all projects in an organization, it is recommended that you apply a project filter to all of your queries. When pulling data into client tools such as Power BI or Excel, using the project path syntax is the best way to ensure that all your data is constrained by the given project. We recommend you use organization-scoped or collection-scoped queries only when you need to report on two or more projects.
 
 
-<a id="project-scope" />
+<a id="project-scope"></a>
 
 ## Project-scoped queries
 
@@ -66,10 +57,10 @@ In the examples provided, make the following replacements:
 
 
 > [!NOTE]
-> The remaining examples provided in this article are based on a Azure DevOps Services URL. You will need to substitute in your Azure DevOps Server URL to exercise the examples.  
+> The remaining examples provided in this article are based on an Azure DevOps Services URL. You will need to substitute in your Azure DevOps Server URL to exercise the examples.  
 
 
-<a id="work-item-count" />
+<a id="work-item-count"></a>
 
 ### Return a count of work items 
 
@@ -134,7 +125,7 @@ AreaLevel14	null
 Depth	1
 ``` 
 
-<a id="expand-option" />
+<a id="expand-option"></a>
 
 ### Use of the $expand option 
 
@@ -155,7 +146,7 @@ https://analytics.dev.azure.com/{OrganizationName}/_odata/{version}/WorkItems?
   &$expand=Parent($filter=ProjectName eq '{ProjectName}')
 ```
 
-<a id="org-scope" />
+<a id="org-scope"></a>
 
 ##  Organization-scoped queries  
 
@@ -193,7 +184,7 @@ https://analytics.dev.azure.com/msft-skilling/_odata/v1.0/WorkItems?
 
 -->
 
-<a id="parent-work-items" />
+<a id="parent-work-items"></a>
 
 ### Return the parent of all work items
 
@@ -215,7 +206,7 @@ https://analytics.dev.azure.com/{OrganizationName}/_odata/{version}/WorkItems?
 
 Without the other filter, the request will fail if the parent of any work item references work items in a project that you don't have read access to.
 
-<a id="project-level-security" />
+<a id="project-level-security"></a>
 
 ## Project-level security restrictions
 

@@ -3,8 +3,8 @@ title: Sample custom rule scenarios
 titleSuffix: Azure DevOps 
 description: Examples of custom rule definitions for inherited and XML processes 
 ms.service: azure-devops-boards
-ms.author: kaelli
-author: KathrynEE
+ms.author: chcomley
+author: chcomley
 monikerRange: "<= azure-devops"
 ms.topic: sample
 ms.date: 06/30/2021
@@ -257,7 +257,7 @@ For an Inheritance process, you can prevent users from modifying a work item by 
 
 It's not possible to define a custom rule that restricts modification of work items of a specific type. You can only specify restriction by state. If the user doesn't change the state, then they can modify other fields, unless all fields are made read-only for the group. 
 
-Instead, if you want to restrict a group of users from modifying select work items of any type, you can assign those work items to an Area Path. Define a security group, and then set restrictions for editing work items for that Area Path for that group as shown in the following image. To learn more, see [Set permissions and access for work tracking, Create child nodes and modify work items under an area path](../../security/set-permissions-access-work-tracking.md#set-permissions-area-path)
+Instead, if you want to restrict a group of users from modifying select work items of any type, you can assign those work items to an Area Path. Define a security group, and then set restrictions for editing work items for that Area Path for that group as shown in the following image. For more information, see [Set permissions and access for work tracking, Create child nodes and modify work items under an area path](../../security/set-permissions-access-work-tracking.md#set-permissions-area-path)
 
 :::image type="content" source="media/sample-rules/restrict-modifications-by-area-path-permissions.png" alt-text="Screenshot of Permissions dialog for an Area Path to restrict modifications of work items.":::
 
@@ -290,7 +290,7 @@ The following custom rule restricts the Fabrikam Review Team (*for* attribute) f
 
 ## Restrict state transitions 
 
-For inherited processes, any-to-any state transitions are automatically defined. This allows users to advanced the workflow state from new to completed, but also to move backwards in case that is needed. When defining custom rules to restrict a transition, keep in mind that if a user makes a mistake in updating the workflow, they may not be able to correct it. For example, they could update the status by moving a work item card to a later stage on the Kanban board, but not move it back. 
+For inherited processes, any-to-any state transitions are automatically defined. This allows users to advanced the workflow state from new to completed, but also to move backwards in case that is needed. When defining custom rules to restrict a transition, keep in mind that if a user makes a mistake in updating the workflow, they may not be able to correct it. For example, they could update the status by moving a work item card to a later stage on the board, but not move it back. 
 
 > [!TIP]  
 > Consider restricting a state transition for some but not all users. That way, if a user makes a mistake, they can ask another team member to reset the State value to bypass the restriction.
@@ -298,7 +298,7 @@ For inherited processes, any-to-any state transitions are automatically defined.
 Before defining state transition rules, review [Rules and rule evaluation, Auto-generated rules](rule-reference.md#auto-generated-rules) and [How workflow states and state categories are used in Backlogs and Boards](../../../boards/work-items/workflow-and-state-categories.md).
 
  
-<a id="restrict-modification-closed-wi" />
+<a id="restrict-modification-closed-wi"></a>
 
 ## Restrict modification of closed work items
 
@@ -360,7 +360,7 @@ For example, the following condition indicates that the Justification field is h
 ::: moniker-end
 
 
-<a id="restrict-modifications-wits" /> 
+<a id="restrict-modifications-wits"></a> 
 
 ## Restrict modification of select fields based on a user or group 
 
@@ -381,7 +381,7 @@ Using one of the following two conditions, you can make select fields required f
 - `current user is not a member of a group...`
 
 > [!TIP]    
-> To avoid rule evaluation issues that may arise, specify Azure DevOps security groups and not Azure Active Directory or Active Directory security groups. To learn more, see [Default rules and the rule engine](rule-reference.md).
+> To avoid rule evaluation issues that may arise, specify Azure DevOps security groups and not Microsoft Entra ID or Active Directory security groups. For more information, see [Default rules and the rule engine](rule-reference.md).
 
 For example, you can make the **Title** or the **State** fields **Read-only** for select users or groups. 
 
@@ -400,8 +400,8 @@ For the [On-premises XML process model](../../../reference/on-premises-xml-proce
 For example, you can restrict modification of work items by adding a rule to the work item type, usually within the **WORKFLOW** section. 
 
 You restrict access to work tracking objects in one of two ways:
-- [Set a condition field rule](rule-reference.md), [a condition-based field rule](../../../reference/xml/assign-conditional-based-values-and-rules.md) or a combination of the two that applies to a group. You can restrict changes from being made to a field by specifying a qualifying rule and making it apply for a specific group. Conditional rules can include **CANNOTLOSEVALUE**, **EMPTY**, **FROZEN**, **NOTSAMEAS**, **READONLY**, and **REQUIRED** elements. 
-- By [adding WITs to the Hidden Categories group](../../../reference/xml/use-categories-to-group-work-item-types.md), you can prevent the majority of project contributors from creating them. You [can create a hyperlink to a template](../../../boards/backlogs/work-item-template.md) that opens the work item form and share that link with those team members who you do want to create them. 
+- [Set a condition field rule](rule-reference.md), [a condition-based field rule](/previous-versions/azure/devops/reference/xml/assign-conditional-based-values-and-rules) or a combination of the two that applies to a group. You can restrict changes from being made to a field by specifying a qualifying rule and making it apply for a specific group. Conditional rules can include **CANNOTLOSEVALUE**, **EMPTY**, **FROZEN**, **NOTSAMEAS**, **READONLY**, and **REQUIRED** elements. 
+- By [adding WITs to the Hidden Categories group](/previous-versions/azure/devops/reference/xml/use-categories-to-group-work-item-types), you can prevent the majority of project contributors from creating them. You [can create a hyperlink to a template](../../../boards/backlogs/work-item-template.md) that opens the work item form and share that link with those team members who you do want to create them. 
 
 ---
 

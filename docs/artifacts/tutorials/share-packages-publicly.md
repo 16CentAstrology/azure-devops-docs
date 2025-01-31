@@ -1,8 +1,9 @@
 ---
 title: Share Packages publicly with public feeds
-description: Use Azure Artifacts public feeds to share NuGet, npm, Maven, and Python packages publicly
+description: Use Azure Artifacts public feeds to share packages publicly.
 ms.service: azure-devops-artifacts
-ms.date: 11/22/2022
+ms.custom:
+ms.date: 07/07/2023
 monikerRange: 'azure-devops'
 ---
 
@@ -19,46 +20,88 @@ Azure Artifacts provides an easy way to share packages to users outside your org
 
 ## Create a public feed
 
+> [!NOTE]
+> Public feeds are only available in Azure DevOps Services.
+
 Public feeds are project-scoped feeds in a public project. Public feeds inherit the visibility settings of the hosting project.
 
-1. Navigate to your project, and then select **Artifacts**.
+1. Sign in to your Azure DevOps organization, and then navigate to your public project.
 
-    :::image type="content" source="../media/goto-feed-hub-azure-devops-newnav.png" alt-text="A screenshot showing how to access Artifacts from the Azure DevOps dashboard.":::
-
-1. Select **Create Feed**.
+1. Select **Artifacts**, and then select **Create Feed**.
 
     :::image type="content" source="../media/new-feed-devops.png" alt-text="A screenshot showing how to create a new feed.":::
 
-1. Give your feed a **Name**, and then select **Project: PublicProject (Recommended)** for its scope.
+1. Give your feed a **Name**, select **Project: PublicProject (Recommended)** for its scope, and then select **Create** when you're done.
 
     :::image type="content" source="../media/new-public-feed.png" alt-text="A screenshot showing how to create a new public feed.":::
 
-1. Select **Create** when you are done.
+## Publish packages (CLI)
+
+#### [NuGet](#tab/nuget)
+
+- [Publish NuGet packages - (NuGet.exe)](../nuget/publish.md#publish-packages-to-a-feed-in-the-same-organization)
+- [Publish NuGet packages - (dotnet)](../nuget/dotnet-exe.md#publish-packages-to-a-feed-in-the-same-organization)
+
+#### [Npm](#tab/npm)
+
+- [Publish npm packages](../npm/publish.md)
+
+#### [Maven](#tab/maven)
+
+- [Publish Maven Artifacts](../get-started-maven.md#publish-packages)
+
+#### [Gradle](#tab/gradle)
+
+- [Publish Artifacts using Gradle](../maven/publish-with-gradle.md)
+
+#### [Python](#tab/python)
+
+- [Publish Python packages](../quickstarts/python-cli.md#publish-packages)
+
+#### [Cargo](#tab/cargo)
+
+- [Publish Cargo packages](../get-started-cargo.md)
+
+#### [Universal Packages](#tab/universalpackages)
+
+- [Publish Universal Packages](../quickstarts/universal-packages.md#publish-universal-packages)
+
+- - -
+
+## Publish packages with Azure Pipelines
+
+#### [NuGet](#tab/nuget)
+
+- [Publish NuGet packages](../../pipelines/artifacts/nuget.md#publish-nuget-packages-to-a-feed-in-the-same-organization)
+
+#### [Npm](#tab/npm)
+
+- [Publish npm packages](../../pipelines/artifacts/npm.md#publish-packages-to-a-feed-in-the-same-organization)
+
+#### [Maven](#tab/maven)
+
+- [Publish Maven Artifacts](../../pipelines/artifacts/publish-maven-artifacts.md)
+
+#### [Gradle](#tab/gradle)
+
+- [Publish Artifacts with Gradle](../../pipelines/artifacts/pull-package-gradle.md)
+
+#### [Python](#tab/python)
+
+- [Publish Python packages](../../pipelines/artifacts/pypi.md#publish-python-packages-to-a-feed)
+
+#### [Cargo](#tab/cargo)
+
+- [Publish Cargo packages (YAML/Classic)](../../pipelines/artifacts/cargo-pipelines.md)
+
+#### [Universal Packages](#tab/universalpackages)
+
+- [Publish Universal Packages](../../pipelines/artifacts/universal-packages.md#publish-a-universal-package)
+
+- - -
 
 > [!NOTE]
-> Organization-scoped feeds cannot be converted into project-scoped feeds.
-
-## Publish packages
-
-If you want to publish NuGet packages, make sure you have the latest [Azure Artifacts Credential Provider](https://github.com/microsoft/artifacts-credprovider#azure-artifacts-credential-provider).
-
-### Publish packages (CLI)
-
-- [NuGet - NuGet.ext](../nuget/publish.md#publish-packages)
-- [NuGet - dotnet](../nuget/dotnet-exe.md#publish-packages)
-- [Npm](../npm/publish.md)
-- [Maven](../get-started-maven.md#publish-artifacts)
-- [Python](../quickstarts/python-cli.md#publish-python-packages)
-
-### Publish packages with Azure Pipelines
-
-- [NuGet](../../pipelines/artifacts/nuget.md#publish-a-package)
-- [Npm](../../pipelines/artifacts/npm.md#publish-to-azure-artifacts-feeds)
-- [Maven](../../pipelines/artifacts/publish-maven-artifacts.md)
-- [Python](../../pipelines/artifacts/pypi.md#publish-python-packages-to-azure-artifacts-feeds)
-
-> [!IMPORTANT]
-> Universal Packages are not supported in public feeds.
+> If your organization is using a firewall or a proxy server, make sure you allow [Azure Artifacts Domain URLs and IP addresses](../../organizations/security/allow-list-ip-url.md#azure-artifacts).
 
 ## Share packages
 
@@ -66,13 +109,10 @@ To share your packages publicly, you can simply share your feed URL E.g. `https:
 
 As long as your project is kept public, anyone can view and download packages from your public feed. Anonymous users won't be able to create new feeds or access the recycle bin.
 
-:::image type="content" source="../media/public-feeds-access.png" alt-text="A screenshot showing packages in a public feed.":::
-
-> [!IMPORTANT]
-> Upstream sources are not supported in public feeds.
+:::image type="content" source="../media/packages-public-feed.png" alt-text="A screenshot showing the content of a public feed.":::
 
 ## Related articles
 
 - [Package sizes and count limits](../reference/limits.md)
-- [Package notifications](../how-to/follow-package-notifications.md)
-- [Package badges](../package-badges.md)
+- [Follow a package for publish alerts](../how-to/follow-package-notifications.md)
+- [Delete and recover packages](../how-to/delete-and-recover-packages.md)
